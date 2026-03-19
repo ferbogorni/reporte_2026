@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>UAP — Dashboard Integral de Admisiones</title>
+<title>UAP — Dashboard Integral de Admisiones 2020–2026</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
 :root{--az:#1B3A6B;--az2:#2E5BA8;--azL:#D6E4F0;--vd:#1A7A4A;--vdL:#D6F0E4;--na:#C75B1A;--naL:#FAE5D3;--rj:#A93226;--rjL:#FADBD8;--am:#BA7517;--amL:#FAEEDA;--gr:#566573;--grL:#F4F6F7;--grB:#DDE1E5}
@@ -28,6 +28,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 .card{background:#fff;border-radius:8px;border:1px solid var(--grB);padding:15px 17px;margin-bottom:13px}
 .ct{font-size:10px;font-weight:600;color:var(--az);margin-bottom:11px;text-transform:uppercase;letter-spacing:.05em}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px}
 .cw{position:relative}
 .ins{border-radius:6px;padding:9px 12px;margin-bottom:8px;font-size:12px;line-height:1.6}
 .ins.az{background:var(--azL);border-left:3px solid var(--az2);color:#0C3060}
@@ -49,14 +50,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 .qcard{background:var(--grL);border-radius:6px;padding:9px 12px;margin-bottom:6px;font-size:12px;line-height:1.6;color:#2c3e50;border-left:3px solid var(--az2);font-style:italic}
 .qmeta{font-size:10px;color:var(--gr);margin-top:3px;font-style:normal;font-weight:500}
 .atip{background:#FFF8E1;border:1px solid #F9A825;border-radius:4px;padding:2px 7px;font-size:10px;color:#6D4C00;display:inline-block;margin-left:4px}
-@media(max-width:900px){.g2{grid-template-columns:1fr}.page{padding:12px}}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}.page{padding:12px}}
 </style>
 </head>
 <body>
 <div class="hdr">
   <div>
     <h1>Universidad Adventista del Plata — Dashboard Integral de Admisiones</h1>
-    <p>2020–2026 · 4,500 admitidos · 3,799 matriculados · 2026: ciclo abierto · Generado: 2026-03-19 15:24</p>
+    <p>2020–2026 · 4.500 admitidos · 3.799 matriculados · 2026: ciclo abierto (575 adm · 466 mat parcial · proy. base: 495)</p>
   </div>
   <div class="hbadge">Dirección de Marketing</div>
 </div>
@@ -90,20 +91,20 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- RESUMEN -->
 <div id="tab-resumen" class="page active">
   <div class="kg">
-    <div class="kpi"><div class="kl">Total admitidos</div><div class="kv">4,500</div><div class="ks">2020–2026</div></div>
-    <div class="kpi vd"><div class="kl">Total matriculados</div><div class="kv">3,799</div><div class="ks">84.4% conversión global</div></div>
-    <div class="kpi"><div class="kl">2026: admitidos</div><div class="kv">575</div><div class="ks">Ciclo abierto · ini: 514</div></div>
-    <div class="kpi na"><div class="kl">2026: matriculados</div><div class="kv">466</div><div class="ks">Parcial · proy. base: 496</div></div>
-    <div class="kpi"><div class="kl">Objetivo 2027</div><div class="kv">550</div><div class="ks">Gap: 54 matriculados</div></div>
+    <div class="kpi"><div class="kl">Total admitidos</div><div class="kv">4.500</div><div class="ks">2020–2026 · base corregida</div></div>
+    <div class="kpi vd"><div class="kl">Total matriculados</div><div class="kv">3.799</div><div class="ks">84.4% conversión global</div></div>
+    <div class="kpi"><div class="kl">Pico admitidos</div><div class="kv">764</div><div class="ks">2022</div></div>
+    <div class="kpi na"><div class="kl">Valle reciente</div><div class="kv">494</div><div class="ks">2025 · −35% vs pico</div></div>
+    <div class="kpi vd"><div class="kl">Recuperación 2026</div><div class="kv">+16%</div><div class="ks">574 vs 494</div></div>
     <div class="kpi"><div class="kl">Arg / Ext promedio</div><div class="kv">67 / 33</div><div class="ks">% del período</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Admitidos y matriculados por año</div>
-      <div class="cw" style="height:240px"><canvas id="c_r1"></canvas></div>
-      <p class="note">* 2026: ciclo abierto — barra muestra matriculados parciales actuales. Proyección base: 496</p>
+      <div class="cw" style="height:230px"><canvas id="c_r1"></canvas></div>
+      <p class="note">* 2021: año atípico COVID</p>
     </div>
     <div class="card"><div class="ct">Tasa de matriculación final (%)</div>
-      <div class="cw" style="height:240px"><canvas id="c_r2"></canvas></div>
+      <div class="cw" style="height:230px"><canvas id="c_r2"></canvas></div>
     </div>
   </div>
   <div class="g2">
@@ -119,14 +120,16 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- EMBUDO -->
 <div id="tab-embudo" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Adm → Inició</div><div class="kv" id="kpi_e1">—</div><div class="ks">Pérdida principal</div></div>
-    <div class="kpi vd"><div class="kl">Inició → Finalizó</div><div class="kv" id="kpi_e2">—</div><div class="ks">Alta fidelización</div></div>
-    <div class="kpi vd"><div class="kl">Conversión total</div><div class="kv">84.4%</div><div class="ks">3,799 de 4,500</div></div>
+    <div class="kpi"><div class="kl">Adm → Inició</div><div class="kv">85.6%</div><div class="ks">643 no inician — pérdida principal</div></div>
+    <div class="kpi vd"><div class="kl">Inició → Finalizó</div><div class="kv">96.0%</div><div class="ks">Solo 153 no terminan</div></div>
+    <div class="kpi vd"><div class="kl">Conversión total</div><div class="kv">82.2%</div><div class="ks">3.682 de 4.478</div></div>
     <div class="kpi na"><div class="kl">Mayor pérdida</div><div class="kv">Etapa 1</div><div class="ks">Admitido → inicia inscripción</div></div>
+    <div class="kpi"><div class="kl">Mejor año</div><div class="kv">2023</div><div class="ks">95.1%</div></div>
+    <div class="kpi rj"><div class="kl">Menor conversión</div><div class="kv">2021</div><div class="ks">76.1% — menor del período</div></div>
   </div>
-  <div class="card"><div class="ct">Embudo anual: admitidos → inició → finalizó</div>
+  <div class="card"><div class="ct">Embudo anual: admitidos → inició → finalizó inscripción</div>
     <div class="cw" style="height:260px"><canvas id="c_e1"></canvas></div>
-    <div class="ins na" style="margin-top:10px"><strong>La pérdida está en arrancar, no en terminar.</strong> Quien inicia la inscripción la completa en el 96%+ de los casos históricamente. El foco de mejora es lograr que más admitidos den ese primer paso.</div>
+    <div class="ins na" style="margin-top:10px"><strong>La pérdida está en arrancar, no en terminar.</strong> Quien inicia la inscripción la completa en el 96% de los casos. El foco de mejora es lograr que más admitidos den ese primer paso — la admisión es gratuita y hay perfiles de baja intención que "se anotan" sin comprometerse.</div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">% inicio de inscripción por año</div>
@@ -136,24 +139,28 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
       <div class="cw" style="height:200px"><canvas id="c_e3"></canvas></div>
     </div>
   </div>
-  <div class="card" id="proj_card" style="background:var(--amL);border-color:#BA7517">
-    <div class="ct" style="color:#633806">Proyección de cierre 2026 — 4 escenarios</div>
-    <table class="tbl" id="tbl_proj"></table>
+  <div class="g2">
+    <div class="card"><div class="ct">Embudo por canal de captación</div>
+      <div class="cw" style="height:220px"><canvas id="c_e4"></canvas></div>
+    </div>
+    <div class="card"><div class="ct">Embudo por tipo de institución (locales)</div>
+      <div class="cw" style="height:220px"><canvas id="c_e5"></canvas></div>
+    </div>
   </div>
 </div>
 
 <!-- CARRERAS -->
 <div id="tab-carreras" class="page">
   <div class="kg">
-    <div class="kpi vd"><div class="kl">Mayor conversión</div><div class="kv">~98%</div><div class="ks">Medicina (examen previo)</div></div>
-    <div class="kpi rj"><div class="kl">Menor conv. estructural</div><div class="kl">Enfermería (sin años atípicos)</div></div>
-    <div class="kpi"><div class="kl">Mayor volumen</div><div class="kv">Psicología</div><div class="ks">Ver embudo por carrera</div></div>
-    <div class="kpi na"><div class="kl">Enf. 2024 convenio</div><div class="kv">49%</div><div class="ks">Anomalía — separada</div></div>
+    <div class="kpi vd"><div class="kl">Mayor conversión</div><div class="kv">98%</div><div class="ks">Medicina (examen previo)</div></div>
+    <div class="kpi rj"><div class="kl">Menor conv. estructural</div><div class="kv">71%</div><div class="ks">Enfermería (sin años atípicos)</div></div>
+    <div class="kpi"><div class="kl">Mayor volumen</div><div class="kv">Psicología</div><div class="ks">473 adm · 86% conv.</div></div>
+    <div class="kpi na"><div class="kl">Enf. 2024 convenio</div><div class="kv">49%</div><div class="ks">98 adm · 48 mat.</div></div>
   </div>
   <div class="card">
-    <div class="ct">Embudo por carrera — admitidos, matriculados y tasa (período completo)</div>
+    <div class="ct">Embudo por carrera — admitidos, matriculados y tasa de conversión (2020–2026)</div>
     <div id="carr-table-wrap"></div>
-    <p class="note">* Medicina: examen eliminatorio y cupo 90/año — su 98% no es comparable. &nbsp;|&nbsp; † Enf. 2024 separado por anomalía de convenio.</p>
+    <p class="note">* Medicina: examen eliminatorio y cupo 90/año — su 98% no es comparable con otras carreras. &nbsp;|&nbsp; † Enfermería 2024 separado por anomalía de convenio.</p>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Carreras estrella — admitidos por año</div>
@@ -163,16 +170,22 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
       <div class="cw" style="height:240px"><canvas id="c_c3"></canvas></div>
     </div>
   </div>
+  <div class="card"><div class="ct">Enfermería — detalle por año</div>
+    <table class="tbl" id="tbl_enf"></table>
+  </div>
 </div>
 
 <!-- MEDICINA Y PRE -->
 <div id="tab-medicina" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Preuniversitario</div><div class="kv" id="kpi_pre_adm">—</div><div class="ks">~77% extranjeros</div></div>
-    <div class="kpi vd"><div class="kl">Medicina</div><div class="kv" id="kpi_med_adm">—</div><div class="ks">Cupo 90/año · examen elim.</div></div>
-    <div class="kpi"><div class="kl">Medicina: % ext.</div><div class="kv">~62%</div><div class="ks">Muy expuesto a caída intl.</div></div>
+    <div class="kpi"><div class="kl">Preuniversitario adm.</div><div class="kv">637</div><div class="ks">77% extranjeros</div></div>
+    <div class="kpi"><div class="kl">Conv. Pre</div><div class="kv">76%</div><div class="ks">486 finalizaron</div></div>
+    <div class="kpi vd"><div class="kl">Medicina adm.</div><div class="kv">310</div><div class="ks">Cupo 90/año · examen elim.</div></div>
+    <div class="kpi vd"><div class="kl">Conv. Medicina</div><div class="kv">98%</div><div class="ks">Filtrado por examen previo</div></div>
+    <div class="kpi"><div class="kl">Medicina: % ext.</div><div class="kv">62%</div><div class="ks">193 de 310</div></div>
+    <div class="kpi na"><div class="kl">Pre 2025 vs 2024</div><div class="kv">−69%</div><div class="ks">43 vs 140</div></div>
   </div>
-  <div class="ins az"><strong>El Preuniversitario es el pipeline de Medicina.</strong> La caída del Pre por el colapso internacional impacta directamente en el futuro de Medicina. Recuperar el segmento internacional recupera el pipeline.</div>
+  <div class="ins az"><strong>El Preuniversitario es el pipeline de Medicina.</strong> La caída del Pre en 2025-2026 por el colapso internacional es directamente la caída del pipeline hacia Medicina. Recuperar el segmento internacional recupera el futuro de esta carrera.</div>
   <div class="g2">
     <div class="card"><div class="ct">Preuniversitario y Medicina: admitidos por año</div>
       <div class="cw" style="height:230px"><canvas id="c_m1"></canvas></div>
@@ -181,15 +194,20 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
       <div class="cw" style="height:230px"><canvas id="c_m2"></canvas></div>
     </div>
   </div>
+  <div class="card"><div class="ct">Proceso de ingreso Medicina por año</div>
+    <table class="tbl" id="tbl_med"></table>
+  </div>
 </div>
 
 <!-- LOCAL -->
 <div id="tab-local" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Argentinos adm.</div><div class="kv" id="kpi_arg_adm">—</div><div class="ks">~67% del total</div></div>
-    <div class="kpi vd"><div class="kl">Conv. locales</div><div class="kv" id="kpi_arg_conv">—</div><div class="ks">Período completo</div></div>
-    <div class="kpi"><div class="kl">Provincia #1</div><div class="kv">Entre Ríos</div><div class="ks">~34% del total local</div></div>
-    <div class="kpi am"><div class="kl">Región top conv.</div><div class="kv">Patagonia</div><div class="ks">~87% — la más alta</div></div>
+    <div class="kpi"><div class="kl">Argentinos admitidos</div><div class="kv">3.009</div><div class="ks">67% del total</div></div>
+    <div class="kpi vd"><div class="kl">Matriculados locales</div><div class="kv">2.513</div><div class="ks">83.5% conversión</div></div>
+    <div class="kpi"><div class="kl">Provincia #1</div><div class="kv">Entre Ríos</div><div class="ks">1.021 · 34% del total local</div></div>
+    <div class="kpi am"><div class="kl">Región top conv.</div><div class="kv">Patagonia</div><div class="ks">87% — la más alta</div></div>
+    <div class="kpi"><div class="kl">Adventistas locales</div><div class="kv">61.9%</div><div class="ks">1.862 de 3.009</div></div>
+    <div class="kpi na"><div class="kl">Crecimiento local</div><div class="kv">Estancado</div><div class="ks">Oscila 360→507 sin tendencia</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Argentinos admitidos y matriculados por año</div>
@@ -207,17 +225,23 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
       <div class="cw" style="height:230px"><canvas id="c_l4"></canvas></div>
     </div>
   </div>
+  <div class="card"><div class="ct">Top 10 provincias</div>
+    <table class="tbl" id="tbl_prov"></table>
+  </div>
 </div>
+
 
 <!-- ENTRE RÍOS -->
 <div id="tab-entrerios" class="page">
   <div class="kg">
-    <div class="kpi vd"><div class="kl">Crecimiento 2020→2026</div><div class="kv" id="kpi_er_crec">—</div><div class="ks">La región de mayor crecimiento</div></div>
-    <div class="kpi"><div class="kl">Total período</div><div class="kv" id="kpi_er_adm">—</div><div class="ks">Admitidos</div></div>
-    <div class="kpi vd"><div class="kl">Conversión global</div><div class="kv" id="kpi_er_conv">—</div><div class="ks">Período completo</div></div>
-    <div class="kpi"><div class="kl">Año pico</div><div class="kv" id="kpi_er_pico">—</div><div class="ks">Mayor año del período</div></div>
+    <div class="kpi vd"><div class="kl">Crecimiento 2020→2026</div><div class="kv">+110%</div><div class="ks">82 → 172 admitidos</div></div>
+    <div class="kpi"><div class="kl">Total período</div><div class="kv">1.028</div><div class="ks">22.8% del total nacional</div></div>
+    <div class="kpi vd"><div class="kl">Conversión global</div><div class="kv">85.1%</div><div class="ks">876 matriculados</div></div>
+    <div class="kpi"><div class="kl">Pico</div><div class="kv">192</div><div class="ks">2024 — mayor año del período</div></div>
+    <div class="kpi"><div class="kl">Localidad #1</div><div class="kv">Paraná</div><div class="ks">179 adm · 82% conv.</div></div>
+    <div class="kpi vd"><div class="kl">Libertador San Martín</div><div class="kv">92%</div><div class="ks">208 adm (ciudad campus)</div></div>
   </div>
-  <div class="ins vd"><strong>Entre Ríos es la región de mayor crecimiento absoluto del período.</strong> Crecimiento local y sostenido, no impulsado por extranjeros. Paraná, Crespo y Diamante concentran el mayor potencial no explotado. Es donde más se puede crecer sin inversión en pauta nueva.</div>
+  <div class="ins vd"><strong>Entre Ríos es la región de mayor crecimiento absoluto del período.</strong> Pasó de 82 admitidos en 2020 a 172 en 2026 — un crecimiento del +110%. No es un pico aislado: el 2026 es el segundo año más alto de toda la serie. A diferencia del crecimiento 2020–2024 que fue parcialmente impulsado por extranjeros, En Entre Ríos el crecimiento es casi completamente local. Es la región que más oportunidad tiene para seguir escalando.</div>
   <div class="g2">
     <div class="card"><div class="ct">Admitidos Entre Ríos por año</div>
       <div class="cw" style="height:220px"><canvas id="c_er1"></canvas></div>
@@ -226,16 +250,53 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
       <div class="cw" style="height:220px"><canvas id="c_er2"></canvas></div>
     </div>
   </div>
+  <div class="g2">
+    <div class="card"><div class="ct">Top localidades — admitidos y conversión</div>
+      <table class="tbl" id="tbl_er_loc"></table>
+    </div>
+    <div class="card"><div class="ct">Composición por tipo de institución</div>
+      <div class="cw" style="height:230px"><canvas id="c_er3"></canvas></div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">Carreras top en Entre Ríos — evolución por año</div>
+    <div class="cw" style="height:240px"><canvas id="c_er4"></canvas></div>
+  </div>
+  <div class="g2">
+    <div class="card"><div class="ct">Top colegios de Entre Ríos</div>
+      <table class="tbl" id="tbl_er_col"></table>
+    </div>
+    <div class="card"><div class="ct">Canal de captación en Entre Ríos</div>
+      <div class="cw" style="height:240px"><canvas id="c_er5"></canvas></div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">Potencial no explotado — externos de Entre Ríos</div>
+    <div class="ins az"><strong>687 de 1.028 admitidos de Entre Ríos son alumnos externos</strong> (no viven en el campus). Las localidades de Crespo (144 externos), Paraná (117) y Diamante (73) representan el mayor potencial de crecimiento local sin necesidad de captación nueva — son comunidades cercanas donde la UAP ya tiene presencia pero donde la propuesta residencial no aplica a todos. El perfil externo de Entre Ríos convierte al 81.5% vs. 88.3% el interno — la brecha se cierra con mejor acompañamiento en el proceso.</div>
+    <div class="cw" style="height:180px"><canvas id="c_er6"></canvas></div>
+  </div>
 </div>
 
 <!-- COLEGIOS -->
 <div id="tab-colegios" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Top 3 colegios adv.</div><div class="kv" id="kpi_col3">—</div><div class="ks">% del total local</div></div>
-    <div class="kpi vd"><div class="kl">Conv. colegio adv.</div><div class="kv" id="kpi_col_adv">—</div><div class="ks">vs pública</div></div>
-    <div class="kpi"><div class="kl">Inst. Crespo (no adv.)</div><div class="kv">~97%</div><div class="ks">Mayor conv. no adventista</div></div>
+    <div class="kpi"><div class="kl">Top 3 colegios adv.</div><div class="kv">670</div><div class="ks">Balcarce + ISAM + IAP = 22% local</div></div>
+    <div class="kpi vd"><div class="kl">Conv. colegio adv.</div><div class="kv">88.9%</div><div class="ks">vs 75.1% pública</div></div>
+    <div class="kpi vd"><div class="kl">Balcarce</div><div class="kv">94.7%</div><div class="ks">262 adm · 248 mat.</div></div>
+    <div class="kpi"><div class="kl">IAP unificado (D-4+D-222)</div><div class="kv">187</div><div class="ks">92.0% conversión</div></div>
+    <div class="kpi"><div class="kl">Inst. Crespo (no adv.)</div><div class="kv">97.4%</div><div class="ks">39 adm · mayor conv. de todos</div></div>
+    <div class="kpi na"><div class="kl">Colegios públicos</div><div class="kv">75.1%</div><div class="ks">La más baja por tipo</div></div>
   </div>
-  <div class="card"><div class="ct">Ranking colegios adventistas (≥10 admitidos · mapeo unificado)</div>
+  <div class="card"><div class="ct">Top colegios adventistas — evolución anual (admitidos)</div>
+    <div class="cw" style="height:260px"><canvas id="c_col1"></canvas></div>
+  </div>
+  <div class="g2">
+    <div class="card"><div class="ct">Balcarce — perfil de carreras</div>
+      <div class="cw" style="height:190px"><canvas id="c_col2"></canvas></div>
+    </div>
+    <div class="card"><div class="ct">ISAM — perfil de carreras</div>
+      <div class="cw" style="height:190px"><canvas id="c_col3"></canvas></div>
+    </div>
+  </div>
+  <div class="card"><div class="ct">Ranking completo colegios adventistas (≥10 admitidos · mapeo unificado)</div>
     <table class="tbl" id="tbl_col"></table>
   </div>
   <div class="card" style="margin-top:13px"><div class="ct">Top colegios no adventistas</div>
@@ -246,9 +307,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- INTERNACIONAL -->
 <div id="tab-internacional" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Total ext. adm.</div><div class="kv" id="kpi_ext_adm">—</div><div class="ks">~33% del total</div></div>
-    <div class="kpi rj"><div class="kl">Brasil 2026 vs 2024</div><div class="kv">−81%</div><div class="ks">24 vs 129 admitidos</div></div>
-    <div class="kpi vd"><div class="kl">Modelo: Uruguay</div><div class="kv">~90%</div><div class="ks">Conv. nunca cayó</div></div>
+    <div class="kpi"><div class="kl">Total extranjeros adm.</div><div class="kv">1.469</div><div class="ks">33% del total período</div></div>
+    <div class="kpi"><div class="kl">Conv. extranjeros</div><div class="kv">79.6%</div><div class="ks">Etapa 2: 97% (casi sin caída)</div></div>
+    <div class="kpi rj"><div class="kl">Caída 2024→2025</div><div class="kv">−55%</div><div class="ks">255→116 extranjeros</div></div>
+    <div class="kpi"><div class="kl">Principal mercado</div><div class="kv">Brasil</div><div class="ks">586 adm · 83% conv.</div></div>
+    <div class="kpi vd"><div class="kl">Mercado modelo</div><div class="kv">Uruguay</div><div class="ks">92% inicio · 90% final</div></div>
+    <div class="kpi na"><div class="kl">Brasil 2026 vs 2024</div><div class="kv">−81%</div><div class="ks">24 vs 129</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Top 6 países — admitidos por año</div>
@@ -261,6 +325,19 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
   <div class="card"><div class="ct">Clasificación estratégica de mercados</div>
     <table class="tbl" id="tbl_intl"></table>
   </div>
+  <div class="card" style="margin-top:13px"><div class="ct">Colegios adventistas internacionales — fuente de admitidos por país</div>
+    <div class="ins az" style="margin-bottom:12px"><strong>El 66% de los extranjeros viene de colegios adventistas.</strong> 975 de 1.469 admitidos internacionales son de instituciones adventistas. La red adventista global es el canal más sólido — mayor conversión (82.8%) que pública (77.9%) y comparable con privada no adventista. El conocimiento de los colegios por país permite activar la captación con precisión quirúrgica.</div>
+    <table class="tbl" id="tbl_intl_col"></table>
+  </div>
+  <div class="g2" style="margin-top:13px">
+    <div class="card"><div class="ct">Colegios Brasil — evolución (top 4)</div>
+      <div class="cw" style="height:230px"><canvas id="c_intl_br"></canvas></div>
+      <div class="ins az" style="margin-top:8px"><strong>Instituto Adventista Brasil Central + IAESC son los dos colegios de mayor pipeline activo.</strong> El Brasil Central tuvo 11 admitidos en 2024 — sin actividad en 2025. El IAESC viene creciendo desde 2023 con 7 admitidos en 2024. Las visitas de 2025 apuntaron bien.</div>
+    </div>
+    <div class="card"><div class="ct">Tipo institución extranjeros — conversión</div>
+      <div class="cw" style="height:230px"><canvas id="c_intl_ti"></canvas></div>
+    </div>
+  </div>
 </div>
 
 <!-- PERFIL -->
@@ -268,16 +345,26 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
   <div class="kg">
     <div class="kpi"><div class="kl">Edad media matr.</div><div class="kv">22.0</div><div class="ks">mediana: 21 años</div></div>
     <div class="kpi na"><div class="kl">Edad media no matr.</div><div class="kv">25.3</div><div class="ks">+3.3 años de diferencia</div></div>
-    <div class="kpi"><div class="kl">Mayoría femenina</div><div class="kv">~58.7%</div><div class="ks"></div></div>
-    <div class="kpi na"><div class="kl">Conv. casados</div><div class="kv">~67%</div><div class="ks">vs ~85% solteros</div></div>
+    <div class="kpi"><div class="kl">Mayoría femenina</div><div class="kv">58.7%</div><div class="ks">2.627 mujeres</div></div>
+    <div class="kpi vd"><div class="kl">Conv. Internos</div><div class="kv">84.7%</div><div class="ks">vs 79.4% Externos</div></div>
+    <div class="kpi"><div class="kl">Conv. ≤20 años</div><div class="kv">89%</div><div class="ks">vs 62% mayores de 30</div></div>
+    <div class="kpi na"><div class="kl">Conv. casados</div><div class="kv">67.1%</div><div class="ks">vs 84.6% solteros</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Embudo por grupo etario</div>
-      <div class="cw" style="height:240px"><canvas id="c_p1"></canvas></div>
-      <div class="ins na" style="margin-top:8px"><strong>Mayores de 25:</strong> candidatos para oferta virtual/híbrida.</div>
+      <div class="cw" style="height:230px"><canvas id="c_p1"></canvas></div>
+      <div class="ins na" style="margin-top:8px"><strong>Mayores de 25:</strong> alta intención, baja ejecución. Candidatos para oferta virtual/híbrida — propuesta diferenciada.</div>
     </div>
-    <div class="card"><div class="ct">Interno vs Externo por año</div>
-      <div class="cw" style="height:240px"><canvas id="c_p2"></canvas></div>
+    <div class="card"><div class="ct">Interno vs Externo por año — exacto desde base</div>
+      <div class="cw" style="height:230px"><canvas id="c_p2"></canvas></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card"><div class="ct">Conv. por tipo institución y vida estudiantil</div>
+      <div class="cw" style="height:190px"><canvas id="c_p3"></canvas></div>
+    </div>
+    <div class="card"><div class="ct">Conv. por sexo y estado civil</div>
+      <div class="cw" style="height:190px"><canvas id="c_p4"></canvas></div>
     </div>
   </div>
 </div>
@@ -285,79 +372,166 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- CANALES -->
 <div id="tab-canales" class="page">
   <div class="kg">
-    <div class="kpi vd"><div class="kl">Canal top: Familiar</div><div class="kv">~89%</div><div class="ks">Subutilizado — solo 28% del total</div></div>
-    <div class="kpi rj"><div class="kl">Página Web</div><div class="kv">~68%</div><div class="ks">La más baja</div></div>
-    <div class="kpi na"><div class="kl">Adv. + Web</div><div class="kv">~59%</div><div class="ks">Más predispuesto, peor journey</div></div>
+    <div class="kpi vd"><div class="kl">Canal top: Familiar</div><div class="kv">89.5%</div><div class="ks">865 adm. locales</div></div>
+    <div class="kpi"><div class="kl">Visita al colegio</div><div class="kv">85%</div><div class="ks">Mejor canal no adventistas</div></div>
+    <div class="kpi rj"><div class="kl">Página Web</div><div class="kv">68%</div><div class="ks">La más baja</div></div>
+    <div class="kpi na"><div class="kl">Adv. + Web</div><div class="kv">59.1%</div><div class="ks">Mayor predisposición, peor journey</div></div>
+    <div class="kpi vd"><div class="kl">Adv. + Familiar</div><div class="kv">90.6%</div><div class="ks">El combo de mayor conversión</div></div>
+    <div class="kpi"><div class="kl">Sin dato registrado</div><div class="kv">202</div><div class="ks">Corrección pendiente en sistemas</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Conversión por canal — argentinos</div>
-      <div class="cw" style="height:260px"><canvas id="c_cn1"></canvas></div>
+      <div class="cw" style="height:240px"><canvas id="c_cn1"></canvas></div>
     </div>
-    <div class="card"><div class="ct">Canal × perfil religioso</div>
-      <div class="cw" style="height:260px"><canvas id="c_cn2"></canvas></div>
+    <div class="card"><div class="ct">Canal × perfil religioso — conversión final</div>
+      <div class="cw" style="height:240px"><canvas id="c_cn2"></canvas></div>
     </div>
+  </div>
+  <div class="card"><div class="ct">Análisis cruzado: canal × perfil adventista</div>
+    <table class="tbl" id="tbl_canal"></table>
   </div>
 </div>
 
 <!-- RAZONES -->
 <div id="tab-razones" class="page">
+  <div class="kg">
+    <div class="kpi"><div class="kl">Univ. cristiana</div><div class="kv">2.187</div><div class="ks">48.8% del total · 82.9% conv.</div></div>
+    <div class="kpi"><div class="kl">Excelencia académica</div><div class="kv">1.121</div><div class="ks">25.0% · 81.4% conv.</div></div>
+    <div class="kpi"><div class="kl">Seguridad y ambiente</div><div class="kv">644</div><div class="ks">14.4% · 84.0% conv.</div></div>
+    <div class="kpi"><div class="kl">Cercanía</div><div class="kv">226</div><div class="ks">5.0% · 81.0% conv.</div></div>
+    <div class="kpi"><div class="kl">Texto libre</div><div class="kv">298</div><div class="ks">6.7% respondió abiertamente</div></div>
+    <div class="kpi vd"><div class="kl">Mayor conv. texto libre</div><div class="kv">87%</div><div class="ks">Combinación de motivos</div></div>
+  </div>
   <div class="g2">
-    <div class="card"><div class="ct">Razones estándar — distribución</div>
+    <div class="card"><div class="ct">Razones estándar — arg. vs ext.</div>
       <div class="cw" style="height:220px"><canvas id="c_rz1"></canvas></div>
     </div>
-    <div class="card"><div class="ct">Conversión por razón y origen</div>
+    <div class="card"><div class="ct">Conversión por razón estándar y origen</div>
       <div class="cw" style="height:220px"><canvas id="c_rz2"></canvas></div>
     </div>
   </div>
-  <div class="card"><div class="ct">Texto libre — 298 respuestas categorizadas</div>
+  <div class="card"><div class="ct">Análisis de texto libre — 298 respuestas categorizadas</div>
+    <div class="ins az" style="margin-bottom:12px"><strong>El 6.7% respondió con texto libre.</strong> Estas respuestas revelan motivaciones que las 4 opciones estándar no capturan: vocación misionera, búsqueda de modalidad virtual, referidos familiares con historia en UAP, y una demanda de la única carrera de Teología adventista en Argentina.</div>
     <table class="tbl" id="tbl_libre"></table>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="ct">Voces — misión y vocación (68.8% conv.)</div>
+      <div class="qcard">"Sentí que Dios me pedía que vaya a estudiar a la UAP, así que le obedecí."<div class="qmeta">Adventista · Teología · Argentina</div></div>
+      <div class="qcard">"Quiero trabajar en la obra, quiero cumplir el mandato de Dios."<div class="qmeta">Adventista · Argentina</div></div>
+      <div class="ins rj"><strong>Vocación misionera convierte menos (68.8%).</strong> Alta motivación espiritual, menor certeza sobre la carrera y el proceso. El nurturing para este perfil necesita información concreta sobre salida laboral y pasos de admisión.</div>
+    </div>
+    <div class="card">
+      <div class="ct">Voces — modalidad virtual (60.0% conv.)</div>
+      <div class="qcard">"Ofrece educación a distancia"<div class="qmeta">Argentina · Enfermería · Adulto</div></div>
+      <div class="qcard">"La principal razón es la posibilidad de cursar de forma virtual. Esto me permitirá seguir trabajando."<div class="qmeta">Argentina · Adulto trabajador</div></div>
+      <div class="ins rj"><strong>60% de conversión — demanda latente sin propuesta adecuada.</strong> Son adultos que buscan flexibilidad pero reciben el mismo mensaje de campus residencial. Necesitan journey y propuesta propios.</div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="ct">Voces — familia y referidos (84.1% conv.)</div>
+      <div class="qcard">"Mis padres estudiaron en la UAP"<div class="qmeta">Argentina · 2ª generación UAP</div></div>
+      <div class="qcard">"Mi hermana está estudiando ahí, por eso me conviene a mis padres."<div class="qmeta">Argentina</div></div>
+      <div class="ins vd"><strong>84.1% de conversión.</strong> Los referidos con vínculo familiar son los leads de mayor calidad. Un programa formal con incentivo para alumni sistematiza este canal.</div>
+    </div>
+    <div class="card">
+      <div class="ct">Voces — combinación de motivos (87% conv. — la más alta)</div>
+      <div class="qcard">"No fue apenas un factor. Por ser cristiana, su seguridad, porque es de excelencia y el valor es accesible."<div class="qmeta">Brasil · Adventista</div></div>
+      <div class="qcard">"Elegí la UAP por su calidad académica, su ambiente seguro y los valores. Siempre recibí muy buenas referencias de mi familia."<div class="qmeta">Argentina · Adventista</div></div>
+      <div class="ins vd"><strong>Quien decide por múltiples razones convierte al 87%.</strong> La decisión madura — sustentada en varios pilares — es la más sólida. El nurturing debe construir multicausalidad, no vender un solo argumento.</div>
+    </div>
   </div>
 </div>
 
-<!-- PROYECCIÓN -->
+
+<!-- PROYECCIÓN 2026 -->
 <div id="tab-proyeccion" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Admitidos 2026</div><div class="kv">575</div><div class="ks">~90% del ciclo</div></div>
-    <div class="kpi"><div class="kl">Iniciaron</div><div class="kv">514</div><div class="ks">466 finalizaron</div></div>
+    <div class="kpi"><div class="kl">Admitidos 2026</div><div class="kv">575</div><div class="ks">~90% del ciclo cerrado</div></div>
+    <div class="kpi"><div class="kl">Iniciaron</div><div class="kv">514</div><div class="ks">89.4% de los admitidos</div></div>
+    <div class="kpi na"><div class="kl">Finalizaron (parcial)</div><div class="kv">466</div><div class="ks">90.7% de quienes iniciaron</div></div>
     <div class="kpi na"><div class="kl">Pendientes</div><div class="kv">48</div><div class="ks">Iniciaron · no finalizaron aún</div></div>
-    <div class="kpi vd"><div class="kl">Proy. base</div><div class="kv">496</div><div class="ks">Tasa histórica promedio</div></div>
-    <div class="kpi"><div class="kl">Proy. pesimista</div><div class="kv">475</div><div class="ks">Tasa mínima histórica</div></div>
-    <div class="kpi"><div class="kl">Proy. optimista</div><div class="kv">508</div><div class="ks">Tasa máxima histórica</div></div>
+    <div class="kpi vd"><div class="kl">Proyección base</div><div class="kv">495</div><div class="ks">Tasa histórica 96.3%</div></div>
+    <div class="kpi"><div class="kl">Gap vs objetivo 550</div><div class="kv">−55</div><div class="ks">Rango: −74 a −38</div></div>
   </div>
+
+  <div class="ins az"><strong>Los 48 pendientes son personas que ya tomaron la decisión.</strong> Históricamente, entre el 93% y el 99.5% de quienes inician terminan de matricularse. La estimación del director (480) implicaría que solo el 29% de los pendientes completa el proceso — más conservadora que cualquier año histórico. El escenario base (495) es el más probable.</div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ct">Escenarios de cierre 2026</div>
+      <table class="tbl" id="tbl_proj_esc"></table>
+    </div>
+    <div class="card">
+      <div class="ct">Matriculados históricos + escenarios 2026</div>
+      <div class="cw" style="height:260px"><canvas id="c_proj_hist"></canvas></div>
+    </div>
+  </div>
+
   <div class="card">
-    <div class="ct">Escenarios de cierre 2026</div>
-    <table class="tbl" id="tbl_proj2"></table>
-    <div class="ins az" style="margin-top:10px"><strong>Lectura clave:</strong> Los pendientes son personas que ya iniciaron — históricamente el 93–99% de quienes inician terminan. El foco es eliminar cualquier fricción financiera o administrativa que demore el cierre.</div>
-  </div>
-  <div class="card" style="margin-top:13px"><div class="ct">Matriculados históricos + escenarios 2026</div>
-    <div class="cw" style="height:260px"><canvas id="c_proj"></canvas></div>
+    <div class="ct">Avance de matriculación 2026 — progreso actual</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin-bottom:14px">
+      <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
+        <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Adm → Inició</div>
+        <div style="font-size:26px;font-weight:700;color:var(--az2)">89.4%</div>
+        <div style="font-size:10px;color:var(--gr);margin-top:3px">514 de 575</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
+        <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Inició → Finalizó</div>
+        <div style="font-size:26px;font-weight:700;color:var(--na)">90.7%</div>
+        <div style="font-size:10px;color:var(--gr);margin-top:3px">466 de 514 · parcial</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
+        <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Promedio histórico ini→fin</div>
+        <div style="font-size:26px;font-weight:700;color:var(--vd)">96.3%</div>
+        <div style="font-size:10px;color:var(--gr);margin-top:3px">2020–2025</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
+        <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Pendientes de finalizar</div>
+        <div style="font-size:26px;font-weight:700;color:var(--na)">48</div>
+        <div style="font-size:10px;color:var(--gr);margin-top:3px">arreglos financieros en curso</div>
+      </div>
+    </div>
+    <div class="ins na"><strong>¿Por qué la tasa ini→fin actual (90.7%) es menor al histórico (96.3%)?</strong> Porque el ciclo está abierto — los 48 pendientes están en proceso. Cuando cierren, la tasa final se acercará al histórico. El 90.7% es una fotografía de mitad de proceso, no el resultado final.</div>
   </div>
 </div>
 
 <!-- HALLAZGOS -->
 <div id="tab-hallazgos" class="page">
   <div class="card">
-    <div class="ct">Hallazgos estratégicos</div>
-    <div class="ins vd"><strong>1. La conversión global es sólida (84.4%).</strong> Quien inicia la inscripción la completa en el 96%+ de los casos. El problema no es el proceso de cierre sino quiénes entran y si dan el primer paso.</div>
-    <div class="ins az"><strong>2. La pérdida ocurre en la Etapa 1.</strong> Una parte de los admitidos nunca inicia. La admisión es gratuita — hay perfiles de baja intención. Mejorar la calificación previa reduce este número.</div>
-    <div class="ins az"><strong>3. Dos problemas distintos, dos estrategias.</strong> La caída 2025 fue principalmente internacional. El segmento local oscila sin crecimiento consistente. Una sola estrategia no resuelve los dos.</div>
-    <div class="ins vd"><strong>4. Entre Ríos creció sostenidamente y es la región de mayor potencial local.</strong> Crecimiento local, no impulsado por extranjeros. Paraná, Crespo y Diamante concentran oportunidad sin pauta nueva.</div>
-    <div class="ins am"><strong>5. Patagonia: ~87% conversión — la región más alta del país.</strong> La distancia actúa como filtro de compromiso. Sin estrategia específica — oportunidad clara.</div>
-    <div class="ins na"><strong>6. Canal Familiar convierte ~89% y está subutilizado.</strong> Solo el 28% del total. Programa formal de referidos = mayor retorno por menor costo.</div>
-    <div class="ins na"><strong>7. Página Web convierte ~68% — para adventistas ~59%.</strong> El prospecto más predispuesto tiene el peor journey. Contacto humano en ≤1h cambia el resultado.</div>
-    <div class="ins az"><strong>8. Los tres colegios adventistas top generan el ~22% del total local.</strong> Balcarce, ISAM e IAP. Un agente referente por colegio = máximo ROI del plan local.</div>
-    <div class="ins rj"><strong>9. Brasil es la variable crítica del segmento internacional.</strong> Redes adventistas existen. Las visitas al IASC/IAESC en 2025 son el punto de partida correcto.</div>
-    <div class="ins vd"><strong>10. Uruguay es el modelo a replicar.</strong> Nunca cayó. Red adventista local consolidada + seguimiento sistemático. Replicar en Bolivia, Paraguay y Perú.</div>
-    <div class="ins rj"><strong>11. Enfermería tiene problema estructural.</strong> Único caso donde la razón top no es "universidad cristiana" sino "excelencia académica" — perfil pragmático, propuesta diferente.</div>
-    <div class="ins az"><strong>12. Quien decide por múltiples razones convierte al ~87%.</strong> El nurturing debe construir multicausalidad — no vender un solo argumento.</div>
-    <div class="ins rj"><strong>13. Modalidad virtual tiene demanda latente (~60% conv.).</strong> Adultos con intención real pero propuesta inadecuada. Segmento propio que necesita journey propio.</div>
+    <div class="ct">Hallazgos estratégicos — resumen ejecutivo</div>
+    <div class="ins vd"><strong>1. La conversión global es sólida (82.2%).</strong> Quien inicia la inscripción la completa en el 96% de los casos. El problema no es el proceso sino quiénes entran y si dan el primer paso.</div>
+    <div class="ins az"><strong>2. La pérdida ocurre en la Etapa 1.</strong> 643 admitidos (14.4%) nunca inician. La admisión es gratuita — hay perfiles de baja intención. Mejorar la calificación previa reduce este número.</div>
+    <div class="ins az"><strong>3. Dos problemas distintos, dos estrategias.</strong> Local oscila sin crecer (360→507→425→459→378→463). La caída 2025 fue principalmente internacional. Una sola estrategia no resuelve los dos.</div>
+    <div class="ins rj"><strong>4. Brasil es la variable crítica.</strong> 586 adm. históricos, 83% conv. Pasó de 129 (2024) a 24 (2026). Recuperar 60 brasileños anuales cierra casi la mitad del gap hacia 550.</div>
+    <div class="ins vd"><strong>5. Uruguay es el modelo a replicar.</strong> 92% inicio, 90% final, nunca cayó. Replicar en Bolivia, Paraguay y Perú puede rendir 50-70 admitidos adicionales.</div>
+    <div class="ins na"><strong>6. Familiar convierte al 87-90% y está subutilizado.</strong> Solo 28% del total. Programa formal de referidos con incentivo = mayor retorno por menor costo.</div>
+    <div class="ins na"><strong>7. Página Web convierte 68% — y para adventistas 59%.</strong> El prospecto más predispuesto tiene el peor journey. Contacto humano en ≤1h cambia el resultado.</div>
+    <div class="ins am"><strong>8. Patagonia: 87% conversión — región más alta del país.</strong> 332 adm., la distancia actúa como filtro de compromiso. Sin estrategia específica. Oportunidad clara.</div>
+    <div class="ins az"><strong>9. Tres colegios adventistas generan el 22% de todos los locales.</strong> Balcarce (262, 95%), ISAM (221, 88%), IAP unificado (187, 92%). Un agente referente por colegio = máximo ROI del plan local.</div>
+    <div class="ins vd"><strong>13. Entre Ríos creció +110% en el período y sigue subiendo.</strong> De 82 admitidos en 2020 a 172 en 2026 — el segundo año más alto de toda la serie. A diferencia del crecimiento nacional (impulsado por extranjeros), el de Entre Ríos es local y sostenido. Paraná, Crespo y Diamante concentran el mayor potencial no explotado. Es la región donde más se puede crecer sin inversión en pauta nueva.</div>
+    <div class="ins rj"><strong>10. Enfermería tiene problema estructural.</strong> En años normales 70-80%, en 2026 sin convenio: 58%. Único caso donde la razón top no es "universidad cristiana" sino "excelencia académica" — perfil pragmático, propuesta diferente.</div>
+    <div class="ins az"><strong>11. Quien decide por múltiples razones convierte al 87%.</strong> El nurturing debe construir multicausalidad — no vender un solo argumento sino reforzar todos a la vez.</div>
+    <div class="ins rj"><strong>12. Modalidad virtual tiene demanda latente (60% conv.).</strong> Adultos con intención real pero propuesta inadecuada. Segmento propio que necesita journey propio — separado del mensaje de campus residencial.</div>
+  </div>
+  <div class="card"><div class="ct">Plan de acción priorizado 2027</div>
+    <table class="tbl" id="tbl_plan"></table>
   </div>
 </div>
 
 <script>
-const D = {"embudo_global": {"2020": {"adm": 549, "ini": 512, "fin": 505}, "2021": {"adm": 714, "ini": 586, "fin": 543}, "2022": {"adm": 764, "ini": 632, "fin": 603}, "2023": {"adm": 690, "ini": 659, "fin": 656}, "2024": {"adm": 714, "ini": 633, "fin": 590}, "2025": {"adm": 494, "ini": 445, "fin": 436}, "2026": {"adm": 575, "ini": 514, "fin": 466}}, "origen_arg": [360, 430, 507, 425, 459, 378, 464], "origen_ext": [189, 284, 257, 265, 255, 116, 111], "sexo_f": [292, 439, 457, 385, 420, 286, 361], "sexo_m": [257, 275, 307, 305, 294, 208, 214], "vida_int": [321, 236, 458, 425, 359, 282, 341], "vida_ext": [228, 478, 306, 265, 355, 212, 234], "local_adm": [360, 430, 507, 425, 459, 378, 464], "local_fin": [345, 343, 408, 412, 369, 334, 371], "ti_adv": [216, 238, 236, 193, 186, 168, 202], "ti_pub": [87, 107, 150, 140, 171, 127, 152], "ti_pno": [55, 84, 121, 92, 101, 81, 110], "ti_embudo": {"Adventista": {"adm": 1439, "ini": 1345, "fin": 1310}, "Privada no adventista": {"adm": 644, "ini": 571, "fin": 548}, "Pública": {"adm": 934, "ini": 790, "fin": 718}}, "regiones": {"Entre Ríos": {"adm": 1028, "fin": 877, "pct": 85.3, "yr": [82, 124, 168, 154, 192, 136, 172]}, "Bs As/CABA": {"adm": 532, "fin": 458, "pct": 86.1, "yr": [66, 87, 80, 85, 75, 72, 67]}, "Litoral": {"adm": 491, "fin": 415, "pct": 84.5, "yr": [76, 63, 93, 51, 68, 49, 91]}, "Centro": {"adm": 384, "fin": 325, "pct": 84.6, "yr": [52, 69, 73, 46, 49, 46, 49]}, "Patagonia": {"adm": 333, "fin": 293, "pct": 88.0, "yr": [47, 44, 54, 59, 38, 45, 46]}, "NOA": {"adm": 174, "fin": 147, "pct": 84.5, "yr": [24, 28, 28, 20, 26, 19, 29]}}, "carreras": {"Psicología": {"adm": 473, "ini": 429, "fin": 415}, "Kinesiología": {"adm": 388, "ini": 348, "fin": 334}, "Sistemas": {"adm": 348, "ini": 317, "fin": 312}, "Odontología": {"adm": 311, "ini": 285, "fin": 277}, "Teología": {"adm": 247, "ini": 236, "fin": 224}, "Contador": {"adm": 192, "ini": 170, "fin": 168}, "Administración": {"adm": 176, "ini": 161, "fin": 161}, "Nutrición": {"adm": 180, "ini": 147, "fin": 135}, "Comunicación": {"adm": 164, "ini": 137, "fin": 132}, "Traductorado Inglés": {"adm": 129, "ini": 123, "fin": 122}, "Prof. Ed. Física": {"adm": 129, "ini": 118, "fin": 112}, "Prof. Música": {"adm": 90, "ini": 81, "fin": 74}, "Preuniversitario": {"adm": 637, "ini": 526, "fin": 514}, "Medicina": {"adm": 310, "ini": 307, "fin": 307}, "Enf. (normal)": {"adm": 213, "ini": 177, "fin": 153}, "Enf. 2024": {"adm": 98, "ini": 75, "fin": 48}}, "carr_yr": {"Medicina": [38, 55, 45, 49, 35, 31, 57], "Psicología": [46, 85, 101, 74, 65, 45, 57], "Odontología": [23, 43, 69, 63, 41, 41, 31], "Sistemas": [34, 43, 47, 57, 63, 50, 54], "Kinesiología": [65, 59, 61, 60, 52, 33, 58], "Enfermería": [23, 47, 36, 22, 98, 46, 39], "Nutrición": [30, 41, 33, 25, 18, 15, 18], "Administración": [22, 17, 23, 21, 31, 30, 32]}, "med_pre": {"2020": {"ma": 38, "mf": 38, "pa": 79, "pf": 62}, "2021": {"ma": 55, "mf": 55, "pa": 109, "pf": 83}, "2022": {"ma": 45, "mf": 45, "pa": 117, "pf": 91}, "2023": {"ma": 49, "mf": 49, "pa": 121, "pf": 107}, "2024": {"ma": 35, "mf": 33, "pa": 140, "pf": 113}, "2025": {"ma": 31, "mf": 31, "pa": 43, "pf": 34}, "2026": {"ma": 57, "mf": 56, "pa": 28, "pf": 24}}, "intl": {"Brasileña": {"adm": 587, "ini": 512, "fin": 505, "yr": [86, 104, 95, 118, 129, 31, 24]}, "Ecuatoriana": {"adm": 184, "ini": 156, "fin": 141, "yr": [16, 42, 43, 43, 22, 10, 8]}, "Uruguaya": {"adm": 77, "ini": 76, "fin": 75, "yr": [7, 9, 8, 10, 15, 13, 15]}, "Peruana": {"adm": 105, "ini": 92, "fin": 90, "yr": [11, 23, 15, 18, 18, 7, 13]}, "Chilena": {"adm": 105, "ini": 97, "fin": 93, "yr": [18, 17, 19, 20, 10, 12, 9]}, "Boliviana": {"adm": 92, "ini": 78, "fin": 71, "yr": [5, 24, 22, 16, 9, 6, 10]}, "Paraguaya": {"adm": 51, "ini": 47, "fin": 45, "yr": [7, 10, 7, 4, 13, 5, 5]}, "Colombiana": {"adm": 42, "ini": 33, "fin": 31, "yr": [14, 7, 4, 2, 6, 6, 3]}, "Mexicana": {"adm": 38, "ini": 29, "fin": 27, "yr": [2, 11, 3, 7, 4, 9, 2]}, "Venezolana": {"adm": 35, "ini": 33, "fin": 29, "yr": [5, 6, 9, 6, 4, 2, 3]}, "Estadounidense": {"adm": 35, "ini": 20, "fin": 20, "yr": [1, 11, 5, 2, 6, 6, 4]}, "Guatemalteca": {"adm": 25, "ini": 15, "fin": 14, "yr": [3, 6, 6, 4, 2, 1, 3]}, "Panameña": {"adm": 25, "ini": 23, "fin": 23, "yr": [2, 4, 6, 5, 6, 1, 1]}}, "colegios": [{"inst": "Instituto Adventista Balcarce", "adm": 261, "ini": 255, "fin": 254, "pct": 97.3, "yr": [44, 39, 36, 33, 38, 42, 29], "top3": ["Sistemas", "Kinesiología", "Administración"]}, {"inst": "Instituto Superior Adventista de Misiones", "adm": 221, "ini": 210, "fin": 202, "pct": 91.4, "yr": [24, 26, 37, 28, 32, 27, 47], "top3": ["Psicología", "Contador", "Administración"]}, {"inst": "Inst. Adventista del Plata (IAP)", "adm": 187, "ini": 181, "fin": 179, "pct": 95.7, "yr": [21, 44, 32, 25, 29, 16, 20], "top3": ["Sistemas", "Psicología", "Administración"]}, {"inst": "Inst. Adventista Villa Regina (IAVR)", "adm": 31, "ini": 30, "fin": 29, "pct": 93.5, "yr": [6, 5, 4, 2, 6, 5, 3], "top3": ["Kinesiología", "Sistemas", "Contador"]}, {"inst": "Inst. Adventista de Córdoba (IAC)", "adm": 27, "ini": 24, "fin": 24, "pct": 88.9, "yr": [8, 3, 2, 2, 2, 5, 5], "top3": ["Teología", "Administración", "Asistente Ejecutivo"]}, {"inst": "Inst. Adventista Bella Vista (IABeV)", "adm": 26, "ini": 23, "fin": 22, "pct": 84.6, "yr": [5, 6, 7, 2, 1, 1, 4], "top3": ["Sistemas", "Psicología", "Enfermería"]}, {"inst": "Inst. Adventista Avellaneda (IAA)", "adm": 25, "ini": 24, "fin": 22, "pct": 88.0, "yr": [3, 6, 7, 8, 0, 1, 0], "top3": ["Psicología", "Sistemas", "Administración"]}, {"inst": "Inst. Adventista Tucumán (IAT)", "adm": 23, "ini": 23, "fin": 23, "pct": 100.0, "yr": [6, 3, 4, 8, 1, 0, 1], "top3": ["Psicología", "Kinesiología", "Sistemas"]}, {"inst": "Instituto Adventista Morón", "adm": 22, "ini": 22, "fin": 19, "pct": 86.4, "yr": [3, 4, 3, 5, 1, 4, 2], "top3": ["Teología", "Sistemas", "Kinesiología"]}, {"inst": "Inst. Adventista Mariano Moreno (IAMM)", "adm": 22, "ini": 21, "fin": 20, "pct": 90.9, "yr": [9, 2, 4, 1, 4, 0, 2], "top3": ["Sistemas", "Psicología", "Teología"]}, {"inst": "Inst. Adventista Caleta Olivia (IACO)", "adm": 22, "ini": 20, "fin": 20, "pct": 90.9, "yr": [3, 2, 3, 7, 3, 1, 3], "top3": ["Psicología", "Prof. Ed. Física", "Contador"]}, {"inst": "Inst. Adventista Bahía Blanca (IABa)", "adm": 22, "ini": 20, "fin": 19, "pct": 86.4, "yr": [2, 3, 3, 1, 3, 2, 8], "top3": ["Kinesiología", "Enfermería", "Psicología"]}, {"inst": "Inst. Adventista Sta. Fe Ramos Mejía (IASFE)", "adm": 21, "ini": 19, "fin": 19, "pct": 90.5, "yr": [3, 2, 5, 3, 6, 1, 1], "top3": ["Kinesiología", "Teología", "Prof. Ed. Inicial"]}, {"inst": "Inst. Adventista de Paraná (IAPa)", "adm": 19, "ini": 17, "fin": 16, "pct": 84.2, "yr": [4, 1, 1, 5, 3, 3, 2], "top3": ["Odontología", "Traductorado Inglés", "Sistemas"]}, {"inst": "Inst. Adventista Salta (IASa)", "adm": 18, "ini": 18, "fin": 18, "pct": 100.0, "yr": [7, 1, 3, 1, 4, 2, 0], "top3": ["Enfermería", "Prof. Ed. Física", "Comunicación"]}, {"inst": "Instituto Adventista Florida, DIPREGEP 4823", "adm": 18, "ini": 16, "fin": 16, "pct": 88.9, "yr": [0, 5, 2, 5, 1, 3, 2], "top3": ["Sistemas", "Psicología", "Enfermería"]}, {"inst": "Instituto Adventista de Corrientes", "adm": 17, "ini": 16, "fin": 16, "pct": 94.1, "yr": [4, 3, 2, 2, 1, 1, 4], "top3": ["Odontología", "Nutrición", "Kinesiología"]}, {"inst": "Inst. Adventista Cap. Bermúdez (IACAB)", "adm": 17, "ini": 17, "fin": 17, "pct": 100.0, "yr": [6, 7, 2, 1, 1, 0, 0], "top3": ["Contador", "Prof. Ed. Inicial", "Sistemas"]}, {"inst": "Instituto Adventista Los Polvorines DIPREGEP 4299", "adm": 16, "ini": 15, "fin": 15, "pct": 93.8, "yr": [0, 1, 2, 1, 2, 7, 3], "top3": ["Kinesiología", "Prof. Ed. Física", "Preuniversitario"]}, {"inst": "Instituto Adventista de General Roca", "adm": 15, "ini": 13, "fin": 13, "pct": 86.7, "yr": [0, 0, 0, 7, 2, 3, 3], "top3": ["Contador", "Psicología", "Sistemas"]}, {"inst": " Escuela Adventista \"General Jose de San Martín\"", "adm": 15, "ini": 14, "fin": 14, "pct": 93.3, "yr": [2, 4, 4, 3, 0, 2, 0], "top3": ["Sistemas", "Medicina", "Odontología"]}, {"inst": "Inst. Adventista Alta Gracia (IAAG)", "adm": 15, "ini": 14, "fin": 14, "pct": 93.3, "yr": [2, 0, 4, 5, 1, 0, 3], "top3": ["Psicología", "Sistemas", "Contador"]}, {"inst": "Instituto Adventista de Formosa", "adm": 13, "ini": 11, "fin": 11, "pct": 84.6, "yr": [0, 1, 3, 4, 3, 1, 1], "top3": ["Odontología", "Contador", "Sistemas"]}, {"inst": "Inst. Adventista Mendoza (IAM)", "adm": 13, "ini": 13, "fin": 13, "pct": 100.0, "yr": [5, 5, 1, 0, 1, 0, 1], "top3": ["Contador", "Kinesiología", "Prof. Ed. Física"]}, {"inst": "Inst. Adventista Rosario Ramos Mejía (IARO)", "adm": 12, "ini": 12, "fin": 11, "pct": 91.7, "yr": [2, 2, 3, 1, 0, 3, 1], "top3": ["Prof. Ed. Inicial", "Sistemas", "Asist. Ejecutivo Distancia"]}, {"inst": "U.E.P. Nº 42 Instituto Adventista de Resistencia", "adm": 11, "ini": 11, "fin": 11, "pct": 100.0, "yr": [3, 1, 3, 2, 0, 1, 1], "top3": ["Psicología", "Odontología", "Medicina"]}, {"inst": "Instituto D-170 del CAE", "adm": 10, "ini": 9, "fin": 9, "pct": 90.0, "yr": [0, 0, 2, 2, 5, 1, 0], "top3": ["Odontología", "Sistemas", "Nutrición"]}], "no_adv": [{"inst": "Instituto Comercial Crespo D-33", "tipo": "Privada no adventista", "adm": 39, "fin": 37, "pct": 94.9, "top3": ["Preuniversitario", "Contador", "Kinesiología"]}, {"inst": "Instituto Santa María D-8", "tipo": "Privada no adventista", "adm": 30, "fin": 29, "pct": 96.7, "top3": ["Kinesiología", "Contador", "Preuniversitario"]}, {"inst": "Instituto Sagrado Corazon D-5", "tipo": "Pública", "adm": 24, "fin": 22, "pct": 91.7, "top3": ["Kinesiología", "Administración", "Prof. Universitario"]}, {"inst": "Instituto \"Santa María\" D-8", "tipo": "Privada no adventista", "adm": 23, "fin": 17, "pct": 73.9, "top3": ["Kinesiología", "Psicología", "Preuniversitario"]}, {"inst": "EPNM y S Nº 35  Técnica \"Gral. Don José de San Martín\"", "tipo": "Pública", "adm": 17, "fin": 16, "pct": 94.1, "top3": ["Sistemas", "Administración", "Medicina"]}, {"inst": "Instituto San Pompilio María Pirroti D-98", "tipo": "Privada no adventista", "adm": 16, "fin": 15, "pct": 93.8, "top3": ["Psicología", "Contador", "Kinesiología"]}, {"inst": "Establecimiento Educativo Espiritu Santo D-185", "tipo": "Privada no adventista", "adm": 15, "fin": 15, "pct": 100.0, "top3": ["Sistemas", "Nutrición", "Odontología"]}, {"inst": "Escuela Privada D-198 \"San Jose\"", "tipo": "Privada no adventista", "adm": 14, "fin": 14, "pct": 100.0, "top3": ["Contador", "Sistemas", "Psicología"]}], "edades": {"≤18": {"adm": 425, "fin": 382}, "19-20": {"adm": 939, "fin": 862}, "21-22": {"adm": 1186, "fin": 1029}, "23-25": {"adm": 1200, "fin": 1030}, "26-30": {"adm": 386, "fin": 270}, ">30": {"adm": 363, "fin": 226}}, "canales": {"Familiar": {"adm": 871, "ini": 805, "fin": 795}, "Iglesia": {"adm": 843, "ini": 749, "fin": 702}, "Promoción o visita al colegio": {"adm": 483, "ini": 442, "fin": 422}, "Amigo": {"adm": 376, "ini": 316, "fin": 287}, "Página Web": {"adm": 198, "ini": 161, "fin": 139}, "Folletos": {"adm": 32, "ini": 30, "fin": 29}, "Alumno promotor": {"adm": 3, "ini": 3, "fin": 3}}, "canal_rel": {"adv": {"Familiar": {"adm": 537, "fin": 497}, "Promoción o visita al colegio": {"adm": 191, "fin": 171}, "Iglesia": {"adm": 807, "fin": 673}, "Amigo": {"adm": 107, "fin": 85}, "Página Web": {"adm": 24, "fin": 13}}, "noadv": {"Familiar": {"adm": 331, "fin": 296}, "Promoción o visita al colegio": {"adm": 286, "fin": 246}, "Iglesia": {"adm": 35, "fin": 28}, "Amigo": {"adm": 265, "fin": 200}, "Página Web": {"adm": 171, "fin": 123}}}, "razones_std": {"Por ser una universidad cristiana": {"total": 2193, "fin": 1871, "arg": 1220, "ext": 973}, "Por la excelencia académica": {"total": 1125, "fin": 945, "arg": 861, "ext": 264}, "Por la seguridad y ambiente": {"total": 649, "fin": 561, "arg": 522, "ext": 127}, "Por cercanía": {"total": 229, "fin": 182, "arg": 215, "ext": 14}}, "razones_libre": {"Valores y ambiente cristiano": {"n": 128, "fin": 103, "arg": 81, "ext": 47}, "Misión y vocación": {"n": 67, "fin": 46, "arg": 43, "ext": 24}, "Familia y referidos": {"n": 41, "fin": 34, "arg": 34, "ext": 7}, "Crecimiento personal": {"n": 22, "fin": 18, "arg": 12, "ext": 10}, "Combinación de motivos": {"n": 19, "fin": 17, "arg": 14, "ext": 5}, "Modalidad virtual": {"n": 18, "fin": 12, "arg": 17, "ext": 1}, "Experiencia previa": {"n": 4, "fin": 4, "arg": 4, "ext": 0}, "Única carrera disponible": {"n": 10, "fin": 8, "arg": 8, "ext": 2}, "Convenio / descuento": {"n": 9, "fin": 6, "arg": 7, "ext": 2}, "Recomendación": {"n": 8, "fin": 4, "arg": 5, "ext": 3}}, "entre_rios": {"adm": [82, 124, 168, 154, 192, 136, 172], "fin": [80, 95, 140, 148, 145, 122, 147]}, "proj": {"adm": 575, "ini": 514, "fin_actual": 466, "pendientes": 48, "pesi": 475, "director": 480, "base": 496, "opti": 508}, "_meta": {"anio_abierto": 2026, "objetivo_2027": 550, "anios": [2020, 2021, 2022, 2023, 2024, 2025, 2026], "total_adm": 4500, "total_fin": 3799, "generado": "2026-03-19 15:24", "archivo": "2020-2026.xlsx"}};
-const YRS_STR = [2020, 2021, 2022, 2023, 2024, 2025, 2026].map(String);
-const ANIO_ABIERTO = 2026;
+// ── DATA ──
+const D = {"embudo_global": {"2020": {"adm": 549, "ini": 512, "fin": 505}, "2021": {"adm": 714, "ini": 586, "fin": 543}, "2022": {"adm": 764, "ini": 632, "fin": 603}, "2023": {"adm": 690, "ini": 659, "fin": 656}, "2024": {"adm": 714, "ini": 633, "fin": 590}, "2025": {"adm": 494, "ini": 445, "fin": 436}, "2026": {"adm": 575, "ini": 514, "fin": 466}}, "origen_arg": [360, 430, 507, 425, 459, 378, 464], "origen_ext": [189, 284, 257, 265, 255, 116, 111], "sexo_f": [292, 439, 457, 385, 420, 286, 361], "sexo_m": [257, 275, 307, 305, 294, 208, 214], "vida_int": [321, 236, 458, 425, 359, 282, 341], "vida_ext": [228, 478, 306, 265, 355, 212, 234], "local_adm": [360, 430, 507, 425, 459, 378, 464], "local_fin": [345, 343, 408, 412, 369, 334, 371], "ti_adv": [216, 238, 236, 193, 186, 168, 202], "ti_pub": [87, 107, 150, 140, 171, 127, 152], "ti_pno": [55, 84, 121, 92, 101, 81, 110], "ti_embudo": {"Adventista": {"adm": 1439, "ini": 1345, "fin": 1310}, "Privada no adventista": {"adm": 644, "ini": 571, "fin": 548}, "Pública": {"adm": 934, "ini": 790, "fin": 718}}, "regiones": {"Entre Ríos": {"adm": 1028, "fin": 877, "pct": 85.3, "yr": [82, 124, 168, 154, 192, 136, 172]}, "Bs As/CABA": {"adm": 532, "fin": 458, "pct": 86.1, "yr": [66, 87, 80, 85, 75, 72, 67]}, "Litoral": {"adm": 491, "fin": 415, "pct": 84.5, "yr": [76, 63, 93, 51, 68, 49, 91]}, "Centro": {"adm": 384, "fin": 325, "pct": 84.6, "yr": [52, 69, 73, 46, 49, 46, 49]}, "Patagonia": {"adm": 333, "fin": 293, "pct": 88.0, "yr": [47, 44, 54, 59, 38, 45, 46]}, "NOA": {"adm": 174, "fin": 147, "pct": 84.5, "yr": [24, 28, 28, 20, 26, 19, 29]}}, "carreras": {"Psicología": {"adm": 473, "ini": 429, "fin": 415}, "Kinesiología": {"adm": 388, "ini": 348, "fin": 334}, "Sistemas": {"adm": 348, "ini": 317, "fin": 312}, "Odontología": {"adm": 311, "ini": 285, "fin": 277}, "Teología": {"adm": 247, "ini": 236, "fin": 224}, "Contador": {"adm": 192, "ini": 170, "fin": 168}, "Administración": {"adm": 176, "ini": 161, "fin": 161}, "Nutrición": {"adm": 180, "ini": 147, "fin": 135}, "Comunicación": {"adm": 164, "ini": 137, "fin": 132}, "Traductorado Inglés": {"adm": 129, "ini": 123, "fin": 122}, "Prof. Ed. Física": {"adm": 129, "ini": 118, "fin": 112}, "Prof. Música": {"adm": 90, "ini": 81, "fin": 74}, "Preuniversitario": {"adm": 637, "ini": 526, "fin": 514}, "Medicina": {"adm": 310, "ini": 307, "fin": 307}, "Enf. (normal)": {"adm": 213, "ini": 177, "fin": 153}, "Enf. 2024": {"adm": 98, "ini": 75, "fin": 48}}, "carr_yr": {"Medicina": [38, 55, 45, 49, 35, 31, 57], "Psicología": [46, 85, 101, 74, 65, 45, 57], "Odontología": [23, 43, 69, 63, 41, 41, 31], "Sistemas": [34, 43, 47, 57, 63, 50, 54], "Kinesiología": [65, 59, 61, 60, 52, 33, 58], "Enfermería": [23, 47, 36, 22, 98, 46, 39], "Nutrición": [30, 41, 33, 25, 18, 15, 18], "Administración": [22, 17, 23, 21, 31, 30, 32]}, "med_pre": {"2020": {"ma": 38, "mf": 38, "pa": 79, "pf": 62}, "2021": {"ma": 55, "mf": 55, "pa": 109, "pf": 83}, "2022": {"ma": 45, "mf": 45, "pa": 117, "pf": 91}, "2023": {"ma": 49, "mf": 49, "pa": 121, "pf": 107}, "2024": {"ma": 35, "mf": 33, "pa": 140, "pf": 113}, "2025": {"ma": 31, "mf": 31, "pa": 43, "pf": 34}, "2026": {"ma": 57, "mf": 56, "pa": 28, "pf": 24}}, "intl": {"Brasileña": {"adm": 587, "ini": 512, "fin": 505, "yr": [86, 104, 95, 118, 129, 31, 24]}, "Ecuatoriana": {"adm": 184, "ini": 156, "fin": 141, "yr": [16, 42, 43, 43, 22, 10, 8]}, "Uruguaya": {"adm": 77, "ini": 76, "fin": 75, "yr": [7, 9, 8, 10, 15, 13, 15]}, "Peruana": {"adm": 105, "ini": 92, "fin": 90, "yr": [11, 23, 15, 18, 18, 7, 13]}, "Chilena": {"adm": 105, "ini": 97, "fin": 93, "yr": [18, 17, 19, 20, 10, 12, 9]}, "Boliviana": {"adm": 92, "ini": 78, "fin": 71, "yr": [5, 24, 22, 16, 9, 6, 10]}, "Paraguaya": {"adm": 51, "ini": 47, "fin": 45, "yr": [7, 10, 7, 4, 13, 5, 5]}, "Colombiana": {"adm": 42, "ini": 33, "fin": 31, "yr": [14, 7, 4, 2, 6, 6, 3]}, "Mexicana": {"adm": 38, "ini": 29, "fin": 27, "yr": [2, 11, 3, 7, 4, 9, 2]}, "Venezolana": {"adm": 35, "ini": 33, "fin": 29, "yr": [5, 6, 9, 6, 4, 2, 3]}, "Estadounidense": {"adm": 35, "ini": 20, "fin": 20, "yr": [1, 11, 5, 2, 6, 6, 4]}, "Guatemalteca": {"adm": 25, "ini": 15, "fin": 14, "yr": [3, 6, 6, 4, 2, 1, 3]}, "Panameña": {"adm": 25, "ini": 23, "fin": 23, "yr": [2, 4, 6, 5, 6, 1, 1]}}, "colegios": [{"inst": "Instituto Adventista Balcarce", "adm": 261, "ini": 255, "fin": 254, "pct": 97.3, "yr": [44, 39, 36, 33, 38, 42, 29], "top3": ["Sistemas", "Kinesiología", "Administración"]}, {"inst": "Instituto Superior Adventista de Misiones", "adm": 221, "ini": 210, "fin": 202, "pct": 91.4, "yr": [24, 26, 37, 28, 32, 27, 47], "top3": ["Psicología", "Contador", "Administración"]}, {"inst": "Inst. Adventista del Plata (IAP)", "adm": 187, "ini": 181, "fin": 179, "pct": 95.7, "yr": [21, 44, 32, 25, 29, 16, 20], "top3": ["Sistemas", "Psicología", "Administración"]}, {"inst": "Inst. Adventista Villa Regina (IAVR)", "adm": 31, "ini": 30, "fin": 29, "pct": 93.5, "yr": [6, 5, 4, 2, 6, 5, 3], "top3": ["Kinesiología", "Sistemas", "Contador"]}, {"inst": "Inst. Adventista de Córdoba (IAC)", "adm": 27, "ini": 24, "fin": 24, "pct": 88.9, "yr": [8, 3, 2, 2, 2, 5, 5], "top3": ["Teología", "Administración", "Asistente Ejecutivo"]}, {"inst": "Inst. Adventista Bella Vista (IABeV)", "adm": 26, "ini": 23, "fin": 22, "pct": 84.6, "yr": [5, 6, 7, 2, 1, 1, 4], "top3": ["Sistemas", "Psicología", "Enfermería"]}, {"inst": "Inst. Adventista Avellaneda (IAA)", "adm": 25, "ini": 24, "fin": 22, "pct": 88.0, "yr": [3, 6, 7, 8, 0, 1, 0], "top3": ["Psicología", "Sistemas", "Administración"]}, {"inst": "Inst. Adventista Tucumán (IAT)", "adm": 23, "ini": 23, "fin": 23, "pct": 100.0, "yr": [6, 3, 4, 8, 1, 0, 1], "top3": ["Psicología", "Kinesiología", "Sistemas"]}, {"inst": "Instituto Adventista Morón", "adm": 22, "ini": 22, "fin": 19, "pct": 86.4, "yr": [3, 4, 3, 5, 1, 4, 2], "top3": ["Teología", "Sistemas", "Kinesiología"]}, {"inst": "Inst. Adventista Mariano Moreno (IAMM)", "adm": 22, "ini": 21, "fin": 20, "pct": 90.9, "yr": [9, 2, 4, 1, 4, 0, 2], "top3": ["Sistemas", "Psicología", "Teología"]}, {"inst": "Inst. Adventista Caleta Olivia (IACO)", "adm": 22, "ini": 20, "fin": 20, "pct": 90.9, "yr": [3, 2, 3, 7, 3, 1, 3], "top3": ["Psicología", "Prof. Ed. Física", "Contador"]}, {"inst": "Inst. Adventista Bahía Blanca (IABa)", "adm": 22, "ini": 20, "fin": 19, "pct": 86.4, "yr": [2, 3, 3, 1, 3, 2, 8], "top3": ["Kinesiología", "Enfermería", "Psicología"]}, {"inst": "Inst. Adventista Sta. Fe Ramos Mejía (IASFE)", "adm": 21, "ini": 19, "fin": 19, "pct": 90.5, "yr": [3, 2, 5, 3, 6, 1, 1], "top3": ["Kinesiología", "Teología", "Prof. Ed. Inicial"]}, {"inst": "Inst. Adventista de Paraná (IAPa)", "adm": 19, "ini": 17, "fin": 16, "pct": 84.2, "yr": [4, 1, 1, 5, 3, 3, 2], "top3": ["Odontología", "Traductorado Inglés", "Sistemas"]}, {"inst": "Inst. Adventista Salta (IASa)", "adm": 18, "ini": 18, "fin": 18, "pct": 100.0, "yr": [7, 1, 3, 1, 4, 2, 0], "top3": ["Enfermería", "Prof. Ed. Física", "Comunicación"]}, {"inst": "Instituto Adventista Florida, DIPREGEP 4823", "adm": 18, "ini": 16, "fin": 16, "pct": 88.9, "yr": [0, 5, 2, 5, 1, 3, 2], "top3": ["Sistemas", "Psicología", "Enfermería"]}, {"inst": "Instituto Adventista de Corrientes", "adm": 17, "ini": 16, "fin": 16, "pct": 94.1, "yr": [4, 3, 2, 2, 1, 1, 4], "top3": ["Odontología", "Nutrición", "Kinesiología"]}, {"inst": "Inst. Adventista Cap. Bermúdez (IACAB)", "adm": 17, "ini": 17, "fin": 17, "pct": 100.0, "yr": [6, 7, 2, 1, 1, 0, 0], "top3": ["Contador", "Prof. Ed. Inicial", "Sistemas"]}, {"inst": "Instituto Adventista Los Polvorines DIPREGEP 4299", "adm": 16, "ini": 15, "fin": 15, "pct": 93.8, "yr": [0, 1, 2, 1, 2, 7, 3], "top3": ["Kinesiología", "Prof. Ed. Física", "Preuniversitario"]}, {"inst": "Instituto Adventista de General Roca", "adm": 15, "ini": 13, "fin": 13, "pct": 86.7, "yr": [0, 0, 0, 7, 2, 3, 3], "top3": ["Contador", "Psicología", "Sistemas"]}, {"inst": " Escuela Adventista \"General Jose de San Martín\"", "adm": 15, "ini": 14, "fin": 14, "pct": 93.3, "yr": [2, 4, 4, 3, 0, 2, 0], "top3": ["Sistemas", "Medicina", "Odontología"]}, {"inst": "Inst. Adventista Alta Gracia (IAAG)", "adm": 15, "ini": 14, "fin": 14, "pct": 93.3, "yr": [2, 0, 4, 5, 1, 0, 3], "top3": ["Psicología", "Sistemas", "Contador"]}, {"inst": "Instituto Adventista de Formosa", "adm": 13, "ini": 11, "fin": 11, "pct": 84.6, "yr": [0, 1, 3, 4, 3, 1, 1], "top3": ["Odontología", "Contador", "Sistemas"]}, {"inst": "Inst. Adventista Mendoza (IAM)", "adm": 13, "ini": 13, "fin": 13, "pct": 100.0, "yr": [5, 5, 1, 0, 1, 0, 1], "top3": ["Contador", "Kinesiología", "Prof. Ed. Física"]}, {"inst": "Inst. Adventista Rosario Ramos Mejía (IARO)", "adm": 12, "ini": 12, "fin": 11, "pct": 91.7, "yr": [2, 2, 3, 1, 0, 3, 1], "top3": ["Prof. Ed. Inicial", "Sistemas", "Asist. Ejecutivo Distancia"]}, {"inst": "U.E.P. Nº 42 Instituto Adventista de Resistencia", "adm": 11, "ini": 11, "fin": 11, "pct": 100.0, "yr": [3, 1, 3, 2, 0, 1, 1], "top3": ["Psicología", "Odontología", "Medicina"]}, {"inst": "Instituto D-170 del CAE", "adm": 10, "ini": 9, "fin": 9, "pct": 90.0, "yr": [0, 0, 2, 2, 5, 1, 0], "top3": ["Odontología", "Sistemas", "Nutrición"]}], "no_adv": [{"inst": "Instituto Comercial Crespo D-33", "tipo": "Privada no adventista", "adm": 39, "fin": 37, "pct": 94.9, "top3": ["Preuniversitario", "Contador", "Kinesiología"]}, {"inst": "Instituto Santa María D-8", "tipo": "Privada no adventista", "adm": 30, "fin": 29, "pct": 96.7, "top3": ["Kinesiología", "Contador", "Preuniversitario"]}, {"inst": "Instituto Sagrado Corazon D-5", "tipo": "Pública", "adm": 24, "fin": 22, "pct": 91.7, "top3": ["Kinesiología", "Administración", "Prof. Universitario"]}, {"inst": "Instituto \"Santa María\" D-8", "tipo": "Privada no adventista", "adm": 23, "fin": 17, "pct": 73.9, "top3": ["Kinesiología", "Psicología", "Preuniversitario"]}, {"inst": "EPNM y S Nº 35  Técnica \"Gral. Don José de San Martín\"", "tipo": "Pública", "adm": 17, "fin": 16, "pct": 94.1, "top3": ["Sistemas", "Administración", "Medicina"]}, {"inst": "Instituto San Pompilio María Pirroti D-98", "tipo": "Privada no adventista", "adm": 16, "fin": 15, "pct": 93.8, "top3": ["Psicología", "Contador", "Kinesiología"]}, {"inst": "Establecimiento Educativo Espiritu Santo D-185", "tipo": "Privada no adventista", "adm": 15, "fin": 15, "pct": 100.0, "top3": ["Sistemas", "Nutrición", "Odontología"]}, {"inst": "Escuela Privada D-198 \"San Jose\"", "tipo": "Privada no adventista", "adm": 14, "fin": 14, "pct": 100.0, "top3": ["Contador", "Sistemas", "Psicología"]}], "edades": {"≤18": {"adm": 425, "fin": 382}, "19-20": {"adm": 939, "fin": 862}, "21-22": {"adm": 1186, "fin": 1029}, "23-25": {"adm": 1200, "fin": 1030}, "26-30": {"adm": 386, "fin": 270}, ">30": {"adm": 363, "fin": 226}}, "canales": {"Familiar": {"adm": 871, "ini": 805, "fin": 795}, "Iglesia": {"adm": 843, "ini": 749, "fin": 702}, "Promoción o visita al colegio": {"adm": 483, "ini": 442, "fin": 422}, "Amigo": {"adm": 376, "ini": 316, "fin": 287}, "Página Web": {"adm": 198, "ini": 161, "fin": 139}, "Folletos": {"adm": 32, "ini": 30, "fin": 29}, "Alumno promotor": {"adm": 3, "ini": 3, "fin": 3}}, "canal_rel": {"adv": {"Familiar": {"adm": 537, "fin": 497}, "Promoción o visita al colegio": {"adm": 191, "fin": 171}, "Iglesia": {"adm": 807, "fin": 673}, "Amigo": {"adm": 107, "fin": 85}, "Página Web": {"adm": 24, "fin": 13}}, "noadv": {"Familiar": {"adm": 331, "fin": 296}, "Promoción o visita al colegio": {"adm": 286, "fin": 246}, "Iglesia": {"adm": 35, "fin": 28}, "Amigo": {"adm": 265, "fin": 200}, "Página Web": {"adm": 171, "fin": 123}}}, "razones_std": {"Por ser una universidad cristiana": {"total": 2193, "fin": 1871, "arg": 1220, "ext": 973}, "Por la excelencia académica": {"total": 1125, "fin": 945, "arg": 861, "ext": 264}, "Por la seguridad y ambiente": {"total": 649, "fin": 561, "arg": 522, "ext": 127}, "Por cercanía": {"total": 229, "fin": 182, "arg": 215, "ext": 14}}, "razones_libre": {"Valores y ambiente cristiano": {"n": 128, "fin": 103, "arg": 81, "ext": 47}, "Misión y vocación": {"n": 67, "fin": 46, "arg": 43, "ext": 24}, "Familia y referidos": {"n": 41, "fin": 34, "arg": 34, "ext": 7}, "Crecimiento personal": {"n": 22, "fin": 18, "arg": 12, "ext": 10}, "Combinación de motivos": {"n": 19, "fin": 17, "arg": 14, "ext": 5}, "Modalidad virtual": {"n": 18, "fin": 12, "arg": 17, "ext": 1}, "Experiencia previa": {"n": 4, "fin": 4, "arg": 4, "ext": 0}, "Única carrera disponible": {"n": 10, "fin": 8, "arg": 8, "ext": 2}, "Convenio / descuento": {"n": 9, "fin": 6, "arg": 7, "ext": 2}, "Recomendación": {"n": 8, "fin": 4, "arg": 5, "ext": 3}}, "entre_rios": {"adm": [82, 124, 168, 154, 192, 136, 172], "fin": [80, 95, 140, 148, 145, 122, 147]}, "proj_2026": {"adm": 575, "ini": 514, "fin_actual": 466, "pendientes": 48, "pesi": 476, "director": 480, "base": 495, "opti": 512, "tasa_prom": 96.2, "tasa_min": 92.7, "tasa_max": 99.5}};
+
+const YRS=['2020','2021','2022','2023','2024','2025','2026'];
+const ADM=YRS.map(y=>D.embudo_global[y].adm);
+const INI=YRS.map(y=>D.embudo_global[y].ini);
+const FIN=YRS.map(y=>D.embudo_global[y].fin);
+const PCT_FIN=FIN.map((f,i)=>parseFloat((f/ADM[i]*100).toFixed(1)));
+const PCT_INI=INI.map((v,i)=>parseFloat((v/ADM[i]*100).toFixed(1)));
+const DROP1=ADM.map((a,i)=>a-INI[i]);
+const DROP2=INI.map((v,i)=>v-FIN[i]);
 
 const AZ='#1B3A6B',AZ2='#2E5BA8',VD='#1A7A4A',NA='#C75B1A',RJ='#A93226',GR='#888780',AM='#BA7517';
 Chart.defaults.font.family="'Segoe UI',system-ui,sans-serif";
@@ -366,133 +540,90 @@ const go={responsive:true,maintainAspectRatio:false,
   plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},
   scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},
           y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}}}};
-function leg(p){return{legend:{display:true,position:p||'top',labels:{font:{size:10},color:'#566573',boxWidth:9,padding:10}},tooltip:{mode:'index',intersect:false}};}
-function col(v){return v>=88?VD:v>=80?AZ2:v>=70?NA:RJ;}
-function bdg(v){return v>=88?'vd':v>=80?'az':v>=70?'na':'rj';}
-
-const ADM=YRS_STR.map(y=>D.embudo_global[y].adm);
-const INI=YRS_STR.map(y=>D.embudo_global[y].ini);
-const FIN=YRS_STR.map(y=>D.embudo_global[y].fin);
-const PCT_FIN=FIN.map((f,i)=>parseFloat((f/ADM[i]*100).toFixed(1)));
-const PCT_INI=INI.map((v,i)=>parseFloat((v/ADM[i]*100).toFixed(1)));
-const DROP1=ADM.map((a,i)=>a-INI[i]);
-const DROP2=INI.map((v,i)=>v-FIN[i]);
-
-// KPIs dinámicos
-(function(){
-  const totalIni=INI.reduce((a,b)=>a+b,0);
-  const totalFin=FIN.reduce((a,b)=>a+b,0);
-  const totalAdm=ADM.reduce((a,b)=>a+b,0);
-  const avgE1=Math.round(totalIni/totalAdm*100);
-  const avgE2=Math.round(totalFin/totalIni*100);
-  const e1=document.getElementById('kpi_e1');if(e1)e1.textContent=avgE1+'%';
-  const e2=document.getElementById('kpi_e2');if(e2)e2.textContent=avgE2+'%';
-  // Arg
-  const argAdm=D.local_adm.reduce((a,b)=>a+b,0);
-  const argFin=D.local_fin.reduce((a,b)=>a+b,0);
-  const ea=document.getElementById('kpi_arg_adm');if(ea)ea.textContent=argAdm.toLocaleString();
-  const ec=document.getElementById('kpi_arg_conv');if(ec)ec.textContent=Math.round(argFin/argAdm*100)+'%';
-  // Ext
-  const extAdm=Object.values(D.intl).reduce((a,v)=>a+v.adm,0);
-  const exa=document.getElementById('kpi_ext_adm');if(exa)exa.textContent=extAdm.toLocaleString();
-  // Med/Pre
-  const preAdm=Object.values(D.med_pre).reduce((a,v)=>a+v.pa,0);
-  const medAdm=Object.values(D.med_pre).reduce((a,v)=>a+v.ma,0);
-  const pa=document.getElementById('kpi_pre_adm');if(pa)pa.textContent=preAdm;
-  const ma=document.getElementById('kpi_med_adm');if(ma)ma.textContent=medAdm;
-  // Entre Ríos
-  const erAdm=D.entre_rios.adm;const erFin=D.entre_rios.fin;
-  const erTotal=erAdm.reduce((a,b)=>a+b,0);
-  const erFinTotal=erFin.reduce((a,b)=>a+b,0);
-  const erCrecPct=Math.round((erAdm[erAdm.length-1]-erAdm[0])/erAdm[0]*100);
-  const erPicoVal=Math.max(...erAdm);const erPicoYr=YRS_STR[erAdm.indexOf(erPicoVal)];
-  const ec2=document.getElementById('kpi_er_crec');if(ec2)ec2.textContent='+'+erCrecPct+'%';
-  const ea2=document.getElementById('kpi_er_adm');if(ea2)ea2.textContent=erTotal.toLocaleString();
-  const ev=document.getElementById('kpi_er_conv');if(ev)ev.textContent=Math.round(erFinTotal/erTotal*100)+'%';
-  const ep=document.getElementById('kpi_er_pico');if(ep)ep.textContent=erPicoVal+' ('+erPicoYr+')';
-  // Colegios top3
-  const top3=D.colegios.slice(0,3).reduce((a,c)=>a+c.adm,0);
-  const argTotal=D.local_adm.reduce((a,b)=>a+b,0);
-  const c3=document.getElementById('kpi_col3');if(c3)c3.textContent=top3+' ('+Math.round(top3/argTotal*100)+'%)';
-  const advTi=D.ti_embudo['Adventista'];
-  const pubTi=D.ti_embudo['Pública'];
-  const ca=document.getElementById('kpi_col_adv');
-  if(ca)ca.textContent=Math.round(advTi.fin/advTi.adm*100)+'% vs '+Math.round(pubTi.fin/pubTi.adm*100)+'%';
-})();
+function leg(p){return{legend:{display:true,position:p||'top',labels:{font:{size:10},color:'#566573',boxWidth:9,padding:10}},tooltip:{mode:'index',intersect:false}}}
+function col(v){return v>=88?VD:v>=80?AZ2:v>=70?NA:RJ}
+function bdg(v){return v>=88?'vd':v>=80?'az':v>=70?'na':'rj'}
 
 // ── RESUMEN ──
-new Chart(document.getElementById('c_r1'),{type:'bar',data:{labels:YRS_STR,datasets:[
-  {label:'Admitidos',data:ADM,backgroundColor:YRS_STR.map(y=>y==ANIO_ABIERTO?'rgba(46,91,168,0.12)':'rgba(46,91,168,0.2)'),borderColor:AZ2,borderWidth:1.5,borderRadius:4},
-  {label:'Matriculados',data:FIN,backgroundColor:FIN.map((_,i)=>YRS_STR[i]==ANIO_ABIERTO?VD+'88':VD),borderRadius:4}
+new Chart(document.getElementById('c_r1'),{type:'bar',data:{labels:YRS,datasets:[
+  {label:'Admitidos',data:ADM,backgroundColor:'rgba(46,91,168,0.2)',borderColor:AZ2,borderWidth:1.5,borderRadius:4},
+  {label:'Matriculados',data:FIN,backgroundColor:FIN.map((_,i)=>i===6?VD+'88':VD),borderRadius:4}
 ]},options:{...go,plugins:leg()}});
 
-const PCT_HIST=[...PCT_FIN.slice(0,-1),null];
-const PCT_PROJ_B=[...Array(YRS_STR.length-1).fill(null),parseFloat((D.proj.base/D.embudo_global[String(ANIO_ABIERTO)].adm*100).toFixed(1))];
-const PCT_PROJ_P=[...Array(YRS_STR.length-1).fill(null),parseFloat((D.proj.pesi/D.embudo_global[String(ANIO_ABIERTO)].adm*100).toFixed(1))];
-new Chart(document.getElementById('c_r2'),{type:'line',data:{labels:YRS_STR,datasets:[
-  {label:'Años cerrados',data:PCT_HIST,borderColor:AZ2,backgroundColor:'rgba(46,91,168,0.07)',fill:true,tension:0.3,pointRadius:5,pointBackgroundColor:AZ2,borderWidth:2.5},
-  {label:'Proy. base',data:PCT_PROJ_B,borderColor:AM,backgroundColor:'transparent',pointRadius:7,pointStyle:'triangle',pointBackgroundColor:AM,borderWidth:0,showLine:false},
-  {label:'Proy. pesi.',data:PCT_PROJ_P,borderColor:RJ,backgroundColor:'transparent',pointRadius:6,pointStyle:'rectRot',pointBackgroundColor:RJ,borderWidth:0,showLine:false},
-]},options:{...go,plugins:leg(),scales:{x:go.scales.x,y:{...go.scales.y,min:50,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
+new Chart(document.getElementById('c_r2'),{type:'line',data:{labels:YRS,datasets:[
+  {data:PCT_FIN,borderColor:AZ2,backgroundColor:'rgba(46,91,168,0.07)',fill:true,tension:0.3,pointRadius:5,pointBackgroundColor:YRS.map(y=>y==='2021'?RJ:AZ2),borderWidth:2.5}
+]},options:{...go,scales:{x:go.scales.x,y:{...go.scales.y,min:50,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
 
-new Chart(document.getElementById('c_r3'),{type:'bar',data:{labels:YRS_STR,datasets:[
+new Chart(document.getElementById('c_r3'),{type:'bar',data:{labels:YRS,datasets:[
   {label:'Argentinos',data:D.origen_arg,backgroundColor:AZ2,stack:'s',borderRadius:3},
   {label:'Extranjeros',data:D.origen_ext,backgroundColor:'#1D9E75',stack:'s',borderRadius:3}
 ]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true},y:{...go.scales.y,stacked:true}}}});
 
-new Chart(document.getElementById('c_r4'),{type:'bar',data:{labels:YRS_STR,datasets:[
+new Chart(document.getElementById('c_r4'),{type:'bar',data:{labels:YRS,datasets:[
   {label:'Femenino',data:D.sexo_f,backgroundColor:'#D4537E',stack:'s',borderRadius:3},
   {label:'Masculino',data:D.sexo_m,backgroundColor:AZ2,stack:'s',borderRadius:3}
 ]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true},y:{...go.scales.y,stacked:true}}}});
 
 // ── EMBUDO ──
-new Chart(document.getElementById('c_e1'),{type:'bar',data:{labels:YRS_STR,datasets:[
+new Chart(document.getElementById('c_e1'),{type:'bar',data:{labels:YRS,datasets:[
   {label:'Admitidos',data:ADM,backgroundColor:'rgba(46,91,168,0.15)',borderColor:AZ2,borderWidth:1.5,borderRadius:4},
   {label:'Inició',data:INI,backgroundColor:'rgba(26,122,74,0.3)',borderRadius:4},
   {label:'Finalizó',data:FIN,backgroundColor:VD,borderRadius:4}
 ]},options:{...go,plugins:leg()}});
-new Chart(document.getElementById('c_e2'),{type:'bar',data:{labels:YRS_STR,datasets:[
-  {data:PCT_INI,backgroundColor:PCT_INI.map(v=>col(v)),borderRadius:4}
+
+new Chart(document.getElementById('c_e2'),{type:'bar',data:{labels:YRS,datasets:[
+  {data:PCT_INI,backgroundColor:YRS.map((y,i)=>col(PCT_INI[i])),borderRadius:4}
 ]},options:{...go,scales:{x:go.scales.x,y:{...go.scales.y,min:50,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
-new Chart(document.getElementById('c_e3'),{type:'bar',data:{labels:YRS_STR,datasets:[
+
+new Chart(document.getElementById('c_e3'),{type:'bar',data:{labels:YRS,datasets:[
   {label:'No inicia (E1)',data:DROP1,backgroundColor:RJ,borderRadius:4,stack:'s'},
-  {label:'No finaliza (E2)',data:DROP2,backgroundColor:NA,borderRadius:4,stack:'s'}
+  {label:'Inicia no finaliza (E2)',data:DROP2,backgroundColor:NA,borderRadius:4,stack:'s'}
 ]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true},y:{...go.scales.y,stacked:true}}}});
 
-// Tabla proyección embudo
-(function(){
-  const t=document.getElementById('tbl_proj');if(!t)return;
-  const p=D.proj;const adm=p.adm;
-  const rows=[['Pesimista',p.pesi,'93.1%','Igual que 2024 (peor año normal)'],['Director (est.)',p.director,'94.1%','Conservadora'],['Base',p.base,'97.2%','Promedio histórico'],['Optimista',p.opti,'99.5%','Igual que 2023']];
-  const cls=['rj','az','vd','am'];
-  t.innerHTML='<thead><tr><th>Escenario</th><th class="num">Mat. proyectados</th><th class="num">Tasa ini→fin</th><th class="num">Gap vs 550</th><th>Referencia</th></tr></thead><tbody>';
-  rows.forEach(([esc,mat,tif,ref],i)=>{
-    t.innerHTML+=`<tr><td><strong>${esc}</strong></td><td class="num"><strong>${mat}</strong></td><td class="num"><span class="bdg ${cls[i]}">${tif}</span></td><td class="num" style="color:var(--rj)">-${OBJETIVO_2027-mat}</td><td style="font-size:11px;color:var(--gr)">${ref}</td></tr>`;
-  });
-  t.innerHTML+='</tbody>';
-})();
+const cnames=Object.keys(D.canales);
+new Chart(document.getElementById('c_e4'),{type:'bar',data:{labels:cnames,datasets:[
+  {label:'Inició %',data:cnames.map(c=>Math.round(D.canales[c].ini/D.canales[c].adm*100)),backgroundColor:'rgba(46,91,168,0.25)',borderRadius:3},
+  {label:'Finalizó %',data:cnames.map(c=>Math.round(D.canales[c].fin/D.canales[c].adm*100)),backgroundColor:cnames.map(c=>{const p=D.canales[c].fin/D.canales[c].adm*100;return col(p);}),borderRadius:3}
+]},options:{...go,plugins:leg(),indexAxis:'y',scales:{x:{...go.scales.x,min:50,max:100,ticks:{callback:v=>v+'%',color:'#566573'}},y:{...go.scales.y,ticks:{font:{size:10},color:'#566573'}}}}});
 
-// ── CARRERAS ──
+const tinames=['Adventista','Privada no adventista','Pública'];
+new Chart(document.getElementById('c_e5'),{type:'bar',data:{labels:tinames,datasets:[
+  {label:'Inició %',data:tinames.map(t=>Math.round(D.ti_embudo[t].ini/D.ti_embudo[t].adm*100)),backgroundColor:'rgba(46,91,168,0.25)',borderRadius:4},
+  {label:'Finalizó %',data:tinames.map(t=>Math.round(D.ti_embudo[t].fin/D.ti_embudo[t].adm*100)),backgroundColor:[VD,AZ2,NA],borderRadius:4}
+]},options:{...go,plugins:leg(),scales:{x:go.scales.x,y:{...go.scales.y,min:60,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
+
+// ── CARRERAS TABLE ──
 (function(){
   const CNAMES=Object.keys(D.carreras);
   const maxAdm=Math.max(...CNAMES.map(c=>D.carreras[c].adm));
-  const wrap=document.getElementById('carr-table-wrap');if(!wrap)return;
+  const wrap=document.getElementById('carr-table-wrap');
+  
+  // Sort by admitidos desc
   const sorted=[...CNAMES].sort((a,b)=>D.carreras[b].adm-D.carreras[a].adm);
-  let h=`<div style="display:grid;grid-template-columns:160px 1fr 80px 80px 90px;gap:0;font-size:12px">`;
-  h+=`<div style="padding:6px 8px;font-size:10px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--grB)">Carrera</div>
+  
+  let html=`<div style="display:grid;grid-template-columns:160px 1fr 80px 80px 90px;gap:0;font-size:12px">`;
+  // Header
+  html+=`<div style="padding:6px 8px;font-size:10px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--grB)">Carrera</div>
     <div style="padding:6px 8px;font-size:10px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--grB)">Admitidos → Matriculados</div>
     <div style="padding:6px 8px;font-size:10px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--grB);text-align:right">Adm.</div>
     <div style="padding:6px 8px;font-size:10px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--grB);text-align:right">Mat.</div>
     <div style="padding:6px 8px;font-size:10px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--grB);text-align:right">Conv.</div>`;
+  
   sorted.forEach((c,i)=>{
-    const d=D.carreras[c];const pct=Math.round(d.fin/d.adm*100);
-    const barAdm=Math.round(d.adm/maxAdm*100);const barFin=Math.round(d.fin/maxAdm*100);
+    const d=D.carreras[c];
+    const pct=Math.round(d.fin/d.adm*100);
+    const barAdm=Math.round(d.adm/maxAdm*100);
+    const barFin=Math.round(d.fin/maxAdm*100);
     const bg=i%2===0?'transparent':'var(--grL)';
     const cc=pct>=90?'#1A7A4A':pct>=82?'#2E5BA8':pct>=72?'#C75B1A':'#A93226';
-    const isMed=c==='Medicina';const isEnf24=c==='Enf. 2024';
+    const isMed=c==='Medicina';
+    const isEnf24=c==='Enf. 2024';
     const label=isMed?c+' *':isEnf24?c+' †':c;
-    const labelColor=isEnf24?'#A93226':'inherit';
-    h+=`<div style="padding:7px 8px;background:${bg};display:flex;align-items:center;border-bottom:1px solid var(--grB)"><span style="color:${labelColor}">${label}</span></div>
+    const labelColor=isMed?'#566573':isEnf24?'#A93226':'inherit';
+    
+    html+=`<div style="padding:7px 8px;background:${bg};display:flex;align-items:center;border-bottom:1px solid var(--grB)">
+      <span style="font-weight:${isMed||isEnf24?'500':'400'};color:${labelColor}">${label}</span>
+    </div>
     <div style="padding:7px 8px;background:${bg};display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--grB)">
       <div style="flex:1;position:relative;height:20px">
         <div style="position:absolute;top:3px;left:0;width:${barAdm}%;height:14px;background:rgba(46,91,168,0.15);border-radius:3px;border:1px solid rgba(46,91,168,0.3)"></div>
@@ -501,48 +632,77 @@ new Chart(document.getElementById('c_e3'),{type:'bar',data:{labels:YRS_STR,datas
     </div>
     <div style="padding:7px 8px;background:${bg};text-align:right;font-weight:500;border-bottom:1px solid var(--grB);color:var(--gr)">${d.adm}</div>
     <div style="padding:7px 8px;background:${bg};text-align:right;font-weight:500;border-bottom:1px solid var(--grB)">${d.fin}</div>
-    <div style="padding:7px 8px;background:${bg};text-align:right;border-bottom:1px solid var(--grB)"><span style="display:inline-block;padding:2px 7px;border-radius:8px;font-size:11px;font-weight:600;background:${pct>=90?'#D6F0E4':pct>=82?'#D6E4F0':pct>=72?'#FAE5D3':'#FADBD8'};color:${cc}">${pct}%</span></div>`;
+    <div style="padding:7px 8px;background:${bg};text-align:right;border-bottom:1px solid var(--grB)">
+      <span style="display:inline-block;padding:2px 7px;border-radius:8px;font-size:11px;font-weight:600;background:${pct>=90?'#D6F0E4':pct>=82?'#D6E4F0':pct>=72?'#FAE5D3':'#FADBD8'};color:${cc}">${pct}%</span>
+    </div>`;
   });
-  h+=`</div><div style="display:flex;gap:20px;margin-top:10px;padding:8px 8px 0;font-size:11px;color:var(--gr);border-top:1px solid var(--grB)">
+  
+  // Legend
+  html+=`</div>
+  <div style="display:flex;gap:20px;margin-top:10px;padding:8px 8px 0;font-size:11px;color:var(--gr);border-top:1px solid var(--grB)">
     <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:28px;height:10px;background:rgba(46,91,168,0.15);border:1px solid rgba(46,91,168,0.3);border-radius:2px"></span>Admitidos</span>
     <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:28px;height:10px;background:#1A7A4A;border-radius:2px;opacity:.85"></span>Matriculados</span>
-    <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:10px;height:10px;background:#1A7A4A;border-radius:2px"></span>≥90%</span>
-    <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:10px;height:10px;background:#2E5BA8;border-radius:2px"></span>82–89%</span>
-    <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:10px;height:10px;background:#C75B1A;border-radius:2px"></span>72–81%</span>
-    <span style="display:flex;align-items:center;gap:4px"><span style="display:inline-block;width:10px;height:10px;background:#A93226;border-radius:2px"></span>&lt;72%</span>
+    <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:10px;height:10px;background:#1A7A4A;border-radius:2px"></span>≥90%</span>
+    <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:10px;height:10px;background:#2E5BA8;border-radius:2px"></span>82–89%</span>
+    <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:10px;height:10px;background:#C75B1A;border-radius:2px"></span>72–81%</span>
+    <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:10px;height:10px;background:#A93226;border-radius:2px"></span><72%</span>
   </div>`;
-  wrap.innerHTML=h;
+  
+  wrap.innerHTML=html;
 })();
 
-new Chart(document.getElementById('c_c2'),{type:'line',data:{labels:YRS_STR,datasets:[
+new Chart(document.getElementById('c_c2'),{type:'line',data:{labels:YRS,datasets:[
   {label:'Medicina',data:D.carr_yr['Medicina'],borderColor:RJ,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Psicología',data:D.carr_yr['Psicología'],borderColor:AZ2,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Odontología',data:D.carr_yr['Odontología'],borderColor:'#D4537E',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Sistemas',data:D.carr_yr['Sistemas'],borderColor:VD,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3}
 ]},options:{...go,plugins:leg()}});
-new Chart(document.getElementById('c_c3'),{type:'line',data:{labels:YRS_STR,datasets:[
+
+new Chart(document.getElementById('c_c3'),{type:'line',data:{labels:YRS,datasets:[
   {label:'Kinesiología',data:D.carr_yr['Kinesiología'],borderColor:AZ2,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Enfermería',data:D.carr_yr['Enfermería'],borderColor:RJ,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Nutrición',data:D.carr_yr['Nutrición'],borderColor:NA,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Administración',data:D.carr_yr['Administración'],borderColor:VD,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3}
 ]},options:{...go,plugins:leg()}});
 
+// Tabla Enfermería
+const enfData=[[2020,23,22,22,96,'—'],[2021,47,34,31,66,'—'],[2022,36,26,22,61,'—'],[2023,22,21,19,86,'—'],[2024,98,75,48,49,'Convenio — anomalía'],[2025,46,30,30,65,'—'],[2026,37,34,24,65,'Ciclo abierto']];
+const te=document.getElementById('tbl_enf');
+te.innerHTML='<thead><tr><th>Año</th><th class="num">Adm.</th><th class="num">Inició</th><th class="num">Finalizó</th><th class="num">Conv.</th><th>Contexto</th></tr></thead><tbody>';
+enfData.forEach(([yr,adm,ini,fin,pct,ctx])=>{
+  const cl=bdg(pct);
+  const ctxHtml=ctx.includes('Convenio')||ctx.includes('Ciclo')?`<span style="background:#FFF8E1;border:1px solid #F9A825;border-radius:4px;padding:2px 7px;font-size:10px;color:#6D4C00">${ctx}</span>`:ctx;
+  te.innerHTML+=`<tr><td>${yr}</td><td class="num">${adm}</td><td class="num">${ini}</td><td class="num">${fin}</td><td class="num"><span class="bdg ${cl}">${pct}%</span></td><td style="font-size:11px;color:var(--gr)">${ctxHtml}</td></tr>`;
+});
+te.innerHTML+='</tbody>';
+
 // ── MEDICINA ──
-new Chart(document.getElementById('c_m1'),{type:'bar',data:{labels:YRS_STR,datasets:[
-  {label:'Preuniversitario',data:YRS_STR.map(y=>D.med_pre[y].pa),backgroundColor:'rgba(46,91,168,0.3)',borderRadius:4,stack:'s'},
-  {label:'Medicina',data:YRS_STR.map(y=>D.med_pre[y].ma),backgroundColor:AZ2,borderRadius:4,stack:'s'}
+new Chart(document.getElementById('c_m1'),{type:'bar',data:{labels:YRS,datasets:[
+  {label:'Preuniversitario',data:YRS.map(y=>D.med_pre[y].pa),backgroundColor:'rgba(46,91,168,0.3)',borderRadius:4,stack:'s'},
+  {label:'Medicina',data:YRS.map(y=>D.med_pre[y].ma),backgroundColor:AZ2,borderRadius:4,stack:'s'}
 ]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true},y:{...go.scales.y,stacked:true}}}});
-const prePct=YRS_STR.map(y=>D.med_pre[y].pa>0?parseFloat((D.med_pre[y].pf/D.med_pre[y].pa*100).toFixed(1)):0);
-new Chart(document.getElementById('c_m2'),{type:'bar',data:{labels:YRS_STR,datasets:[
+
+const prePct=YRS.map(y=>parseFloat((D.med_pre[y].pf/D.med_pre[y].pa*100).toFixed(1)));
+new Chart(document.getElementById('c_m2'),{type:'bar',data:{labels:YRS,datasets:[
   {data:prePct,backgroundColor:prePct.map(v=>col(v)),borderRadius:4}
 ]},options:{...go,scales:{x:go.scales.x,y:{...go.scales.y,min:0,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
 
+const tm=document.getElementById('tbl_med');
+tm.innerHTML='<thead><tr><th>Año</th><th class="num">Pre: adm.</th><th class="num">Pre: mat.</th><th class="num">Pre %</th><th class="num">Med: adm.</th><th class="num">Med: mat.</th><th class="num">Med %</th></tr></thead><tbody>';
+YRS.forEach(y=>{
+  const d=D.med_pre[y];
+  const pp=Math.round(d.pf/d.pa*100);const mp=Math.round(d.mf/d.ma*100);
+  tm.innerHTML+=`<tr><td>${y}</td><td class="num">${d.pa}</td><td class="num">${d.pf}</td><td class="num"><span class="bdg ${bdg(pp)}">${pp}%</span></td><td class="num">${d.ma}</td><td class="num">${d.mf}</td><td class="num"><span class="bdg ${bdg(mp)}">${mp}%</span></td></tr>`;
+});
+tm.innerHTML+='</tbody>';
+
 // ── LOCAL ──
-new Chart(document.getElementById('c_l1'),{type:'bar',data:{labels:YRS_STR,datasets:[
+new Chart(document.getElementById('c_l1'),{type:'bar',data:{labels:YRS,datasets:[
   {label:'Admitidos',data:D.local_adm,backgroundColor:'rgba(46,91,168,0.2)',borderColor:AZ2,borderWidth:1.5,borderRadius:4},
   {label:'Matriculados',data:D.local_fin,backgroundColor:VD,borderRadius:4}
 ]},options:{...go,plugins:leg()}});
-new Chart(document.getElementById('c_l2'),{type:'bar',data:{labels:YRS_STR,datasets:[
+
+new Chart(document.getElementById('c_l2'),{type:'bar',data:{labels:YRS,datasets:[
   {label:'Adventista',data:D.ti_adv,backgroundColor:VD,stack:'s',borderRadius:3},
   {label:'Priv. no adv.',data:D.ti_pno,backgroundColor:AZ2,stack:'s',borderRadius:3},
   {label:'Pública',data:D.ti_pub,backgroundColor:'rgba(136,135,128,0.5)',stack:'s',borderRadius:3}
@@ -550,54 +710,55 @@ new Chart(document.getElementById('c_l2'),{type:'bar',data:{labels:YRS_STR,datas
 
 const regs=Object.keys(D.regiones);
 const regCols=[AZ2,'#D4537E',VD,AM,'#7F77DD',NA];
-new Chart(document.getElementById('c_l3'),{type:'line',data:{labels:YRS_STR,datasets:
-  regs.map((r,i)=>{return{label:r,data:D.regiones[r].yr,borderColor:regCols[i],backgroundColor:'transparent',pointRadius:3,borderWidth:r==='Patagonia'?2.5:1.5,tension:0.3}})
+new Chart(document.getElementById('c_l3'),{type:'line',data:{labels:YRS,datasets:
+  regs.map((r,i)=>({label:r,data:D.regiones[r].yr,borderColor:regCols[i],backgroundColor:'transparent',pointRadius:3,borderWidth:r==='Patagonia'?2.5:1.5,tension:0.3}))
 },options:{...go,plugins:leg()}});
+
 new Chart(document.getElementById('c_l4'),{type:'bar',data:{
-  labels:[...regs].sort((a,b)=>D.regiones[b].pct-D.regiones[a].pct),
-  datasets:[{data:[...regs].sort((a,b)=>D.regiones[b].pct-D.regiones[a].pct).map(r=>D.regiones[r].pct),backgroundColor:[...regs].sort((a,b)=>D.regiones[b].pct-D.regiones[a].pct).map(r=>col(D.regiones[r].pct)),borderRadius:5}]
+  labels:regs.sort((a,b)=>D.regiones[b].pct-D.regiones[a].pct),
+  datasets:[{data:regs.sort((a,b)=>D.regiones[b].pct-D.regiones[a].pct).map(r=>D.regiones[r].pct),backgroundColor:regs.sort((a,b)=>D.regiones[b].pct-D.regiones[a].pct).map(r=>col(D.regiones[r].pct)),borderRadius:5}]
 },options:{...go,indexAxis:'y',scales:{x:{...go.scales.x,min:60,max:95,ticks:{callback:v=>v+'%',color:'#566573'}},y:{...go.scales.y,ticks:{font:{size:10},color:'#566573'}}}}});
 
-// ── ENTRE RÍOS ──
-(function(){
-  const er=D.entre_rios;
-  const er1=document.getElementById('c_er1');
-  if(er1) new Chart(er1,{type:'bar',data:{labels:YRS_STR,datasets:[
-    {label:'Admitidos',data:er.adm,backgroundColor:'rgba(46,91,168,0.2)',borderColor:AZ2,borderWidth:1.5,borderRadius:4},
-    {label:'Matriculados',data:er.fin,backgroundColor:VD,borderRadius:4}
-  ]},options:{...go,plugins:leg()}});
-  const er2=document.getElementById('c_er2');
-  if(er2){
-    const erPct=er.adm.map((a,i)=>a>0?Math.round(er.fin[i]/a*100):0);
-    new Chart(er2,{type:'line',data:{labels:YRS_STR,datasets:[
-      {data:erPct,borderColor:VD,backgroundColor:'rgba(26,122,74,0.08)',fill:true,tension:0.3,pointRadius:5,pointBackgroundColor:VD,borderWidth:2.5}
-    ]},options:{...go,scales:{x:go.scales.x,y:{...go.scales.y,min:60,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
-  }
-})();
+// Tabla provincias
+const provData=[['Entre Ríos',1021,853,83.5,'Psicología, Kinesiología'],['Buenos Aires',438,366,83.6,'Sistemas, Psicología'],['Misiones',249,212,85.1,'Psicología, Enfermería'],['Santa Fe',176,152,86.4,'Psicología, Kinesiología'],['Corrientes',112,89,79.5,'Psicología, Enfermería'],['Córdoba',92,79,85.9,'Teología, Psicología'],['Río Negro',89,78,87.6,'Sistemas, Psicología'],['Chaco',78,62,79.5,'Psicología, Odontología'],['Chubut',75,69,92.0,'Variado'],['Tucumán',61,45,73.8,'Teología, Enfermería']];
+const tp=document.getElementById('tbl_prov');
+tp.innerHTML='<thead><tr><th>Provincia</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Carrera top</th><th>Barra</th></tr></thead><tbody>';
+provData.forEach(([p,adm,mat,pct,c])=>{tp.innerHTML+=`<tr><td><strong>${p}</strong></td><td class="num">${adm}</td><td class="num">${mat}</td><td class="num"><span class="bdg ${bdg(pct)}">${pct}%</span></td><td style="font-size:11px;color:var(--gr)">${c}</td><td><div class="bb"><div class="bf" style="width:${pct}%;background:${col(pct)}"></div></div></td></tr>`;});
+tp.innerHTML+='</tbody>';
 
 // ── COLEGIOS ──
-(function(){
-  const tc=document.getElementById('tbl_col');
-  if(tc){
-    tc.innerHTML='<thead><tr><th>#</th><th>Institución</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Carreras top</th></tr></thead><tbody>';
-    D.colegios.forEach((c,i)=>{
-      tc.innerHTML+=`<tr><td style="font-size:10px;color:var(--gr)">${i+1}</td><td style="font-size:11px"><strong>${c.inst}</strong></td><td class="num">${c.adm}</td><td class="num">${c.fin}</td><td class="num"><span class="bdg ${bdg(c.pct)}">${c.pct}%</span></td><td style="font-size:10px;color:var(--gr)">${c.top3.join(', ')}</td></tr>`;
-    });
-    tc.innerHTML+='</tbody>';
-  }
-  const tna=document.getElementById('tbl_noadv');
-  if(tna){
-    tna.innerHTML='<thead><tr><th>Institución</th><th>Tipo</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Carreras top</th></tr></thead><tbody>';
-    D.no_adv.forEach(c=>{
-      const tc2=c.tipo.includes('no adventista')?'az':'na';
-      tna.innerHTML+=`<tr><td style="font-size:11px"><strong>${c.inst}</strong></td><td><span class="bdg ${tc2}" style="font-size:9px">${c.tipo}</span></td><td class="num">${c.adm}</td><td class="num">${c.fin}</td><td class="num"><span class="bdg ${bdg(c.pct)}">${c.pct}%</span></td><td style="font-size:10px;color:var(--gr)">${c.top3.join(', ')}</td></tr>`;
-    });
-    tna.innerHTML+='</tbody>';
-  }
-})();
+const top5inst=D.colegios.slice(0,5);
+new Chart(document.getElementById('c_col1'),{type:'line',data:{labels:YRS,datasets:
+  top5inst.map((c,i)=>({label:c.inst.replace('Instituto Adventista ','').replace('Inst. Adventista ','').replace('Instituto Superior Adventista de ','ISAM ').replace('Instituto Adventista del Plata','IAP'),data:c.yr,borderColor:[AZ2,VD,NA,AM,'#7F77DD'][i],backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3}))
+},options:{...go,plugins:leg()}});
+
+new Chart(document.getElementById('c_col2'),{type:'bar',data:{
+  labels:D.colegios[0].top3,datasets:[{data:[36,33,26],backgroundColor:[AZ2,VD,NA],borderRadius:4}]
+},options:{...go,indexAxis:'y',scales:{x:go.scales.x,y:{...go.scales.y,ticks:{font:{size:10},color:'#566573'}}}}});
+
+new Chart(document.getElementById('c_col3'),{type:'bar',data:{
+  labels:D.colegios[1].top3,datasets:[{data:[27,23,20],backgroundColor:[AZ2,VD,NA],borderRadius:4}]
+},options:{...go,indexAxis:'y',scales:{x:go.scales.x,y:{...go.scales.y,ticks:{font:{size:10},color:'#566573'}}}}});
+
+// Tabla colegios adventistas
+const tc=document.getElementById('tbl_col');
+tc.innerHTML='<thead><tr><th>#</th><th>Institución</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Carreras top</th><th>Barra</th></tr></thead><tbody>';
+D.colegios.forEach((c,i)=>{
+  tc.innerHTML+=`<tr><td style="font-size:10px;color:var(--gr)">${i+1}</td><td style="font-size:11px"><strong>${c.inst}</strong></td><td class="num">${c.adm}</td><td class="num">${c.fin}</td><td class="num"><span class="bdg ${bdg(c.pct)}">${c.pct}%</span></td><td style="font-size:10px;color:var(--gr)">${c.top3.join(', ')}</td><td><div class="bb"><div class="bf" style="width:${c.pct}%;background:${col(c.pct)}"></div></div></td></tr>`;
+});
+tc.innerHTML+='</tbody>';
+
+// Tabla no adventistas
+const tna=document.getElementById('tbl_noadv');
+tna.innerHTML='<thead><tr><th>Institución</th><th>Tipo</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Carreras top</th></tr></thead><tbody>';
+D.no_adv.forEach(c=>{
+  const tcolor=c.tipo.includes('no adventista')?'az':'na';
+  tna.innerHTML+=`<tr><td style="font-size:11px"><strong>${c.inst}</strong></td><td><span class="bdg ${tcolor}" style="font-size:9px">${c.tipo}</span></td><td class="num">${c.adm}</td><td class="num">${c.fin}</td><td class="num"><span class="bdg ${bdg(c.pct)}">${c.pct}%</span></td><td style="font-size:10px;color:var(--gr)">${c.top3.join(', ')}</td></tr>`;
+});
+tna.innerHTML+='</tbody>';
 
 // ── INTERNACIONAL ──
-new Chart(document.getElementById('c_i1'),{type:'line',data:{labels:YRS_STR,datasets:[
+new Chart(document.getElementById('c_i1'),{type:'line',data:{labels:YRS,datasets:[
   {label:'Brasil',data:D.intl['Brasileña'].yr,borderColor:'#D85A30',backgroundColor:'transparent',pointRadius:4,borderWidth:2.5,tension:0.3},
   {label:'Ecuador',data:D.intl['Ecuatoriana'].yr,borderColor:AZ2,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Uruguay',data:D.intl['Uruguaya'].yr,borderColor:VD,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
@@ -605,105 +766,276 @@ new Chart(document.getElementById('c_i1'),{type:'line',data:{labels:YRS_STR,data
   {label:'Chile',data:D.intl['Chilena'].yr,borderColor:'#7F77DD',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
   {label:'Bolivia',data:D.intl['Boliviana'].yr,borderColor:GR,backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3}
 ]},options:{...go,plugins:leg()}});
+
 const br=D.intl['Brasileña'].yr;
-new Chart(document.getElementById('c_i2'),{type:'bar',data:{labels:YRS_STR,datasets:[
+new Chart(document.getElementById('c_i2'),{type:'bar',data:{labels:YRS,datasets:[
   {data:br,backgroundColor:br.map(v=>v>=100?'#993C1D':v>=50?'#D85A30':'#F5C4B3'),borderRadius:4}
 ]},options:{...go}});
 
-(function(){
-  const intlData=[['Brasil',D.intl['Brasileña'],'Colapso 2025-26','Recuperación urgente'],['Ecuador',D.intl['Ecuatoriana'],'Caída sostenida','Recuperación'],['Perú',D.intl['Peruana'],'Recuperando','Invertir'],['Chile',D.intl['Chilena'],'Oscilante','Mantener'],['Bolivia',D.intl['Boliviana'],'Baja gradual','Sostener'],['Uruguay',D.intl['Uruguaya'],'Estable — modelo','Escalar'],['Paraguay',D.intl['Paraguaya'],'Estable','Mantener'],['Colombia',D.intl['Colombiana'],'Irregular','Bajo volumen'],['México',D.intl['Mexicana'],'Baja conv. E1','Revisar']];
-  const ti=document.getElementById('tbl_intl');if(!ti)return;
-  ti.innerHTML='<thead><tr><th>País</th><th class="num">Adm.</th><th class="num">Inició %</th><th class="num">Finalizó %</th><th>Tendencia</th><th>Prioridad</th></tr></thead><tbody>';
-  intlData.forEach(([pais,d,tend,prio])=>{
-    const ini=d.adm>0?Math.round(d.ini/d.adm*100):0;
-    const fin=d.adm>0?Math.round(d.fin/d.adm*100):0;
-    ti.innerHTML+=`<tr><td><strong>${pais}</strong></td><td class="num">${d.adm}</td><td class="num"><span class="bdg ${bdg(ini)}">${ini}%</span></td><td class="num"><span class="bdg ${bdg(fin)}">${fin}%</span></td><td style="font-size:11px;color:var(--gr)">${tend}</td><td style="font-size:11px;color:var(--gr)">${prio}</td></tr>`;
-  });
-  ti.innerHTML+='</tbody>';
-})();
+// Tabla internacional
+const intlData=[
+  ['Brasil',586,84,83,'Colapso 2025-26','Recuperación urgente'],
+  ['Ecuador',184,79,76,'Caída sostenida','Recuperación'],
+  ['Perú',105,83,81,'Recuperando','Invertir'],
+  ['Chile',104,88,85,'Oscilante','Mantener'],
+  ['Bolivia',93,84,78,'Baja gradual','Sostener'],
+  ['Uruguay',77,92,90,'Estable — modelo','Escalar'],
+  ['Paraguay',51,86,80,'Estable','Mantener'],
+  ['Colombia',42,76,74,'Irregular','Bajo volumen'],
+  ['México',38,58,58,'Baja conv. E1','Revisar intención'],
+  ['Guatemala',25,56,52,'Sin tendencia','Baja prioridad']
+];
+const ti2=document.getElementById('tbl_intl');
+ti2.innerHTML='<thead><tr><th>País</th><th class="num">Adm.</th><th class="num">Inició %</th><th class="num">Finalizó %</th><th>Tendencia</th><th>Prioridad 2027</th></tr></thead><tbody>';
+intlData.forEach(([p,adm,ini,fin,tend,prio])=>{
+  const cl=bdg(fin);const pc=bdg(Math.round((fin+ini)/2));
+  ti2.innerHTML+=`<tr><td><strong>${p}</strong></td><td class="num">${adm}</td><td class="num"><span class="bdg ${bdg(ini)}">${ini}%</span></td><td class="num"><span class="bdg ${cl}">${fin}%</span></td><td style="font-size:11px;color:var(--gr)">${tend}</td><td style="font-size:11px;color:var(--gr)">${prio}</td></tr>`;
+});
+ti2.innerHTML+='</tbody>';
 
 // ── PERFIL ──
-(function(){
-  const eLabels=Object.keys(D.edades);
-  const p1=document.getElementById('c_p1');
-  if(p1) new Chart(p1,{type:'bar',data:{labels:eLabels,datasets:[
-    {label:'Admitidos',data:eLabels.map(l=>D.edades[l].adm),backgroundColor:'rgba(46,91,168,0.2)',borderColor:AZ2,borderWidth:1,borderRadius:3},
-    {label:'Matriculados',data:eLabels.map(l=>D.edades[l].fin),backgroundColor:eLabels.map(l=>col(D.edades[l].adm>0?D.edades[l].fin/D.edades[l].adm*100:0)),borderRadius:3}
-  ]},options:{...go,plugins:leg()}});
-  const p2=document.getElementById('c_p2');
-  if(p2) new Chart(p2,{type:'bar',data:{labels:YRS_STR,datasets:[
-    {label:'Internos',data:D.vida_int,backgroundColor:AZ2,borderRadius:3,stack:'s'},
-    {label:'Externos',data:D.vida_ext,backgroundColor:'rgba(46,91,168,0.3)',borderRadius:3,stack:'s'}
-  ]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true},y:{...go.scales.y,stacked:true}}}});
-})();
+const eLabels=Object.keys(D.edades);
+new Chart(document.getElementById('c_p1'),{type:'bar',data:{labels:eLabels,datasets:[
+  {label:'Admitidos',data:eLabels.map(l=>D.edades[l].adm),backgroundColor:'rgba(46,91,168,0.2)',borderColor:AZ2,borderWidth:1,borderRadius:3},
+  {label:'Matriculados',data:eLabels.map(l=>D.edades[l].fin),backgroundColor:eLabels.map(l=>{const p=D.edades[l].fin/D.edades[l].adm*100;return col(p);}),borderRadius:3}
+]},options:{...go,plugins:leg()}});
+
+new Chart(document.getElementById('c_p2'),{type:'bar',data:{labels:YRS,datasets:[
+  {label:'Internos',data:D.vida_int,backgroundColor:AZ2,borderRadius:3,stack:'s'},
+  {label:'Externos',data:D.vida_ext,backgroundColor:'rgba(46,91,168,0.3)',borderRadius:3,stack:'s'}
+]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true},y:{...go.scales.y,stacked:true}}}});
+
+new Chart(document.getElementById('c_p3'),{type:'bar',data:{
+  labels:['Adventista','Priv. no adv.','Pública','Interno','Externo'],
+  datasets:[
+    {label:'Inició %',data:[91,87,82,87,84],backgroundColor:'rgba(46,91,168,0.25)',borderRadius:4},
+    {label:'Finalizó %',data:[89,83,75,85,79],backgroundColor:[VD,AZ2,NA,VD,NA],borderRadius:4}
+  ]},options:{...go,plugins:leg(),scales:{x:go.scales.x,y:{...go.scales.y,min:60,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
+
+new Chart(document.getElementById('c_p4'),{type:'bar',data:{
+  labels:['Masculino','Femenino','Soltero','Casado'],
+  datasets:[{data:[85.1,82.4,84.6,67.1],backgroundColor:[AZ2,'#D4537E',VD,RJ],borderRadius:5}]
+},options:{...go,scales:{x:go.scales.x,y:{...go.scales.y,min:50,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
 
 // ── CANALES ──
-(function(){
-  const cnames=Object.keys(D.canales);
-  const cn1=document.getElementById('c_cn1');
-  if(cn1) new Chart(cn1,{type:'bar',data:{labels:cnames,datasets:[
-    {label:'Inició %',data:cnames.map(c=>Math.round(D.canales[c].ini/D.canales[c].adm*100)),backgroundColor:'rgba(46,91,168,0.25)',borderRadius:3},
-    {label:'Finalizó %',data:cnames.map(c=>Math.round(D.canales[c].fin/D.canales[c].adm*100)),backgroundColor:cnames.map(c=>col(D.canales[c].adm>0?D.canales[c].fin/D.canales[c].adm*100:0)),borderRadius:3}
-  ]},options:{...go,plugins:leg(),indexAxis:'y',scales:{x:{...go.scales.x,min:55,max:100,ticks:{callback:v=>v+'%',color:'#566573'}},y:{...go.scales.y,ticks:{font:{size:10},color:'#566573'}}}}});
-  const crel=D.canal_rel;const adv=crel.adv;const noadv=crel.noadv;
-  const labels2=['Fam. Adv.','Fam. No adv.','Visita No adv.','Visita Adv.','Igl. Adv.','Amigo Adv.','Web No adv.','Web Adv.'];
-  const getF=(obj,key)=>obj[key]?Math.round(obj[key].fin/obj[key].adm*100):0;
-  const vals2=[getF(adv,'Familiar'),getF(noadv,'Familiar'),getF(noadv,'Promoción o visita al colegio'),getF(adv,'Promoción o visita al colegio'),getF(adv,'Iglesia'),getF(adv,'Amigo'),getF(noadv,'Página Web'),getF(adv,'Página Web')];
-  const cn2=document.getElementById('c_cn2');
-  if(cn2) new Chart(cn2,{type:'bar',data:{labels:labels2,datasets:[{data:vals2,backgroundColor:vals2.map(v=>col(v)),borderRadius:4}]},options:{...go,scales:{x:go.scales.x,y:{...go.scales.y,min:50,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
-})();
+const cnLabels=Object.keys(D.canales);
+new Chart(document.getElementById('c_cn1'),{type:'bar',data:{labels:cnLabels,datasets:[
+  {label:'Inició %',data:cnLabels.map(c=>Math.round(D.canales[c].ini/D.canales[c].adm*100)),backgroundColor:'rgba(46,91,168,0.25)',borderRadius:3},
+  {label:'Finalizó %',data:cnLabels.map(c=>Math.round(D.canales[c].fin/D.canales[c].adm*100)),backgroundColor:cnLabels.map(c=>{const p=D.canales[c].fin/D.canales[c].adm*100;return col(p);}),borderRadius:3}
+]},options:{...go,plugins:leg(),indexAxis:'y',scales:{x:{...go.scales.x,min:55,max:100,ticks:{callback:v=>v+'%',color:'#566573'}},y:{...go.scales.y,ticks:{font:{size:10},color:'#566573'}}}}});
+
+new Chart(document.getElementById('c_cn2'),{type:'bar',data:{
+  labels:['Fam. Adv.','Fam. No adv.','Visita No adv.','Visita Adv.','Igl. Adv.','Amigo Adv.','Web No adv.','Web Adv.'],
+  datasets:[{data:[90.6,87.8,85.5,84.4,82.1,74.5,71.5,59.1],backgroundColor:[90.6,87.8,85.5,84.4,82.1,74.5,71.5,59.1].map(v=>col(v)),borderRadius:4}]
+},options:{...go,scales:{x:go.scales.x,y:{...go.scales.y,min:50,max:100,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
+
+// Tabla canal x perfil
+const canalData=[
+  ['Familiar','Adventista',530,480,90.6,'El perfil de mayor conversión. Escalar con referidos.'],
+  ['Familiar','No adventista',335,294,87.8,'Alta también. Referidos trascienden lo adventista.'],
+  ['Visita colegio','No adventista',289,247,85.5,'Mejor canal para captar no adventistas.'],
+  ['Visita colegio','Adventista',192,162,84.4,'Refuerza pipeline de colegios adventistas.'],
+  ['Iglesia','Adventista',805,661,82.1,'Alto volumen, menor conv. que Familiar.'],
+  ['Amigo','Adventista',106,79,74.5,'Referido social de bajo compromiso.'],
+  ['Web','No adventista',172,123,71.5,'Journey web necesita mejora urgente.'],
+  ['Web','Adventista',22,13,59.1,'Más predispuesto, peor resultado. Sin acompañamiento.']
+];
+const tcn=document.getElementById('tbl_canal');
+tcn.innerHTML='<thead><tr><th>Canal</th><th>Perfil</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Lectura</th></tr></thead><tbody>';
+canalData.forEach(([c,p,adm,mat,pct,lec])=>{
+  const pc=p==='Adventista'?'az':'na';
+  tcn.innerHTML+=`<tr><td>${c}</td><td><span class="bdg ${pc}">${p}</span></td><td class="num">${adm}</td><td class="num">${mat}</td><td class="num"><span class="bdg ${bdg(pct)}">${pct}%</span></td><td style="font-size:11px;color:var(--gr)">${lec}</td></tr>`;
+});
+tcn.innerHTML+='</tbody>';
 
 // ── RAZONES ──
+const rzStd=Object.keys(D.razones_std);
+new Chart(document.getElementById('c_rz1'),{type:'bar',data:{labels:rzStd.map(r=>r.replace('Por ser una universidad ','Univ. ').replace('Por la excelencia académica','Excelencia acad.').replace('Por la seguridad y ambiente','Seguridad/amb.').replace('Por cercanía','Cercanía')),datasets:[
+  {label:'Argentinos',data:rzStd.map(r=>D.razones_std[r].arg),backgroundColor:AZ2,stack:'s',borderRadius:3},
+  {label:'Extranjeros',data:rzStd.map(r=>D.razones_std[r].ext),backgroundColor:'#1D9E75',stack:'s',borderRadius:3}
+]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true,ticks:{font:{size:10}}},y:{...go.scales.y,stacked:true}}}});
+
+new Chart(document.getElementById('c_rz2'),{type:'bar',data:{
+  labels:['Cristiana Arg.','Cristiana Ext.','Excel. Arg.','Excel. Ext.','Seguridad Arg.','Seguridad Ext.','Cercanía Arg.'],
+  datasets:[{data:[85.4,79.6,82.1,79.0,85.0,80.0,79.7],backgroundColor:[AZ2,'rgba(46,91,168,0.5)',VD,'rgba(26,122,74,0.5)',NA,'rgba(199,91,26,0.5)',GR],borderRadius:4}]
+},options:{...go,scales:{x:{...go.scales.x,ticks:{font:{size:9},color:'#566573'}},y:{...go.scales.y,min:70,max:90,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
+
+// Tabla texto libre
+const tlKeys=Object.keys(D.razones_libre);
+const tl=document.getElementById('tbl_libre');
+tl.innerHTML='<thead><tr><th>Categoría</th><th class="num">Respuestas</th><th class="num">Mat.</th><th class="num">Conv.</th><th class="num">Arg.</th><th class="num">Ext.</th><th>Barra</th></tr></thead><tbody>';
+const tlSorted=tlKeys.sort((a,b)=>D.razones_libre[b].n-D.razones_libre[a].n);
+tlSorted.forEach(cat=>{
+  const d=D.razones_libre[cat];
+  const pct=Math.round(d.fin/d.n*100);
+  tl.innerHTML+=`<tr><td><strong>${cat}</strong></td><td class="num">${d.n}</td><td class="num">${d.fin}</td><td class="num"><span class="bdg ${bdg(pct)}">${pct}%</span></td><td class="num">${d.arg}</td><td class="num">${d.ext}</td><td><div class="bb"><div class="bf" style="width:${pct}%;background:${col(pct)}"></div></div></td></tr>`;
+});
+tl.innerHTML+='</tbody>';
+
+// ── HALLAZGOS: PLAN ──
+const planData=[
+  [1,'Programa formal de referidos familiares con incentivo concreto para alumni','Local','Alto','Bajo','Q1'],
+  [2,'Journey web: contacto humano ≤1h para todos los leads (especialmente adventistas)','Ambos','Alto','Bajo','Q1'],
+  [3,'Fidelización Balcarce, ISAM e IAP: agente referente + visita anual + kit actualizado','Local','Alto','Medio','Q1'],
+  [4,'Investigación cualitativa Enfermería: entrevistar admitidos 2025-2026 que no matricularon','Local','Medio','Bajo','Q1'],
+  [5,'Campaña específica Patagonia: Meta Ads + testimonios de estudiantes patagónicos','Local','Alto','Medio','Q1-Q2'],
+  [6,'Escalar captación Preuniversitario: pipeline Medicina vía colegios adventistas + Meta por país','Int\'l','Alto','Medio','Q1-Q2'],
+  [7,'Estrategia Brasil: contenido en portugués + red adventista + Meta Ads segmentado','Int\'l','Alto','Alto','Q2'],
+  [8,'Replicar modelo Uruguay en Bolivia, Paraguay y Perú','Int\'l','Medio','Medio','Q2-Q3'],
+  [9,'Nurturing vocación misionera: info concreta sobre salida laboral y proceso de admisión','Local','Medio','Bajo','Q2'],
+  [10,'Propuesta diferenciada mayores de 25 y demanda virtual: mensaje y journey separados','Local','Medio','Alto','Q3'],
+];
+const tp2=document.getElementById('tbl_plan');
+tp2.innerHTML='<thead><tr><th>#</th><th>Acción</th><th>Segmento</th><th>Impacto</th><th>Esfuerzo</th><th>Horizonte</th></tr></thead><tbody>';
+planData.forEach(([n,a,s,imp,esf,hor])=>{
+  const ic=imp==='Alto'?'vd':'az';const ec=esf==='Bajo'?'vd':esf==='Medio'?'az':'na';
+  const sc=s==='Int\'l'?'am':'az';
+  tp2.innerHTML+=`<tr><td>${n}</td><td>${a}</td><td><span class="bdg ${sc}">${s}</span></td><td><span class="bdg ${ic}">${imp}</span></td><td><span class="bdg ${ec}">${esf}</span></td><td>${hor}</td></tr>`;
+});
+tp2.innerHTML+='</tbody>';
+
+
+// ── ENTRE RÍOS ──
 (function(){
-  const rzStd=Object.keys(D.razones_std);
-  const rz1=document.getElementById('c_rz1');
-  if(rz1) new Chart(rz1,{type:'bar',data:{labels:rzStd.map(r=>r.replace('Por ser una universidad ','Univ. ').replace('Por la excelencia académica','Excelencia').replace('Por la seguridad y ambiente','Seguridad').replace('Por cercanía','Cercanía')),datasets:[
-    {label:'Argentinos',data:rzStd.map(r=>D.razones_std[r].arg),backgroundColor:AZ2,stack:'s',borderRadius:3},
-    {label:'Extranjeros',data:rzStd.map(r=>D.razones_std[r].ext),backgroundColor:'#1D9E75',stack:'s',borderRadius:3}
-  ]},options:{...go,plugins:leg(),scales:{x:{...go.scales.x,stacked:true,ticks:{font:{size:10}}},y:{...go.scales.y,stacked:true}}}});
-  const rz2=document.getElementById('c_rz2');
-  if(rz2) new Chart(rz2,{type:'bar',data:{
-    labels:['Cristiana Arg.','Cristiana Ext.','Excel. Arg.','Excel. Ext.','Seguridad Arg.','Cercanía Arg.'],
-    datasets:[{data:[
-      Math.round(D.razones_std['Por ser una universidad cristiana'].fin/D.razones_std['Por ser una universidad cristiana'].arg*100)||0,
-      79,Math.round(D.razones_std['Por la excelencia académica'].fin/D.razones_std['Por la excelencia académica'].arg*100)||0,
-      79,Math.round(D.razones_std['Por la seguridad y ambiente'].fin/D.razones_std['Por la seguridad y ambiente'].arg*100)||0,
-      Math.round(D.razones_std['Por cercanía'].fin/D.razones_std['Por cercanía'].arg*100)||0
-    ],backgroundColor:[AZ2,'rgba(46,91,168,0.5)',VD,'rgba(26,122,74,0.5)',NA,GR],borderRadius:4}]
-  },options:{...go,scales:{x:{...go.scales.x,ticks:{font:{size:9},color:'#566573'}},y:{...go.scales.y,min:70,max:90,ticks:{callback:v=>v+'%',color:'#566573'}}}}});
-  const tlKeys=Object.keys(D.razones_libre);
-  const tl=document.getElementById('tbl_libre');
+  if(!document.getElementById('c_er1')) return;
+  const ER_YRS=['2020','2021','2022','2023','2024','2025','2026'];
+  const ER_ADM=[82,124,168,154,192,136,172];
+  const ER_FIN=[80,95,140,148,145,122,144];
+  const ER_PCT=ER_ADM.map((a,i)=>Math.round(ER_FIN[i]/a*100));
+
+  new Chart(document.getElementById('c_er1'),{type:'bar',data:{labels:ER_YRS,datasets:[
+    {label:'Admitidos',data:ER_ADM,backgroundColor:'rgba(46,91,168,0.2)',borderColor:'#2E5BA8',borderWidth:1.5,borderRadius:4},
+    {label:'Matriculados',data:ER_FIN,backgroundColor:'#1A7A4A',borderRadius:4}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{font:{size:10},color:'#566573',boxWidth:9,padding:10}},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}}}}});
+
+  new Chart(document.getElementById('c_er2'),{type:'line',data:{labels:ER_YRS,datasets:[
+    {data:ER_PCT,borderColor:'#1A7A4A',backgroundColor:'rgba(26,122,74,0.08)',fill:true,tension:0.3,pointRadius:5,pointBackgroundColor:'#1A7A4A',borderWidth:2.5}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},y:{min:60,max:100,grid:{color:'rgba(0,0,0,0.04)'},ticks:{callback:v=>v+'%',color:'#566573'}}}}});
+
+  const locData=[['Paraná',179,147,82],['Libertador San Martín',208,194,93],['Crespo',154,139,90],['Diamante',83,66,80],['Concordia',64,37,58],['Chajarí',33,24,73],['Gral. Ramírez',32,28,88],['Gualeguaychú',30,26,87],['Bovril',24,21,88],['Viale',19,16,84]];
+  const tl=document.getElementById('tbl_er_loc');
   if(tl){
-    tl.innerHTML='<thead><tr><th>Categoría</th><th class="num">Resp.</th><th class="num">Mat.</th><th class="num">Conv.</th><th class="num">Arg.</th><th class="num">Ext.</th></tr></thead><tbody>';
-    [...tlKeys].sort((a,b)=>D.razones_libre[b].n-D.razones_libre[a].n).forEach(cat=>{
-      const d=D.razones_libre[cat];const pct=Math.round(d.fin/d.n*100);
-      tl.innerHTML+=`<tr><td><strong>${cat}</strong></td><td class="num">${d.n}</td><td class="num">${d.fin}</td><td class="num"><span class="bdg ${bdg(pct)}">${pct}%</span></td><td class="num">${d.arg}</td><td class="num">${d.ext}</td></tr>`;
+    tl.innerHTML='<thead><tr><th>Localidad</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Barra</th></tr></thead><tbody>';
+    locData.forEach(([l,adm,mat,p])=>{
+      const c=p>=88?'vd':p>=80?'az':p>=70?'na':'rj';
+      const bc=p>=88?'#1A7A4A':p>=80?'#2E5BA8':p>=70?'#C75B1A':'#A93226';
+      tl.innerHTML+=`<tr><td><strong>${l}</strong></td><td class="num">${adm}</td><td class="num">${mat}</td><td class="num"><span class="bdg ${c}">${p}%</span></td><td><div class="bb"><div class="bf" style="width:${p}%;background:${bc}"></div></div></td></tr>`;
     });
     tl.innerHTML+='</tbody>';
   }
+
+  const er3=document.getElementById('c_er3');
+  if(er3) new Chart(er3,{type:'doughnut',data:{labels:['Privada no adventista (392)','Pública (351)','Adventista (282)'],datasets:[{data:[392,351,282],backgroundColor:['#2E5BA8','#888780','#1A7A4A'],borderWidth:2,borderColor:'#fff'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'right',labels:{font:{size:11},color:'#566573',boxWidth:10}}}}});
+
+  const er4=document.getElementById('c_er4');
+  if(er4) new Chart(er4,{type:'line',data:{labels:ER_YRS,datasets:[
+    {label:'Psicología',data:[5,15,28,24,20,15,14],borderColor:'#2E5BA8',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+    {label:'Kinesiología',data:[18,17,16,15,17,10,21],borderColor:'#1A7A4A',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+    {label:'Odontología',data:[8,7,24,23,13,18,16],borderColor:'#D4537E',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+    {label:'Sistemas',data:[3,10,14,20,19,17,17],borderColor:'#C75B1A',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+    {label:'Contador',data:[5,13,10,9,7,14,9],borderColor:'#BA7517',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{font:{size:10},color:'#566573',boxWidth:9,padding:10}},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}}}}});
+
+  const colER=[['Inst. Adventista del Plata (IAP)','Adv.',86,83,97,'Sistemas, Adm., Psicología'],['Inst. Comercial Crespo D-33','No adv.',38,36,95,'Preuniv., Kines., Contador'],['Inst. Adventista Balcarce','Adv.',35,35,100,'Sistemas, Kinesiología'],['Inst. Santa María D-8','No adv.',30,29,97,'Kinesiología, Contador'],['ISAM (egresados en ER)','Adv.',38,34,89,'Administración, Psicología'],['Inst. Sagrado Corazón D-5','Pública',20,18,90,'Kinesiología, Medicina'],['Inst. Adventista de Paraná','Adv.',16,13,81,'Odontología, Traductorado'],['EPNM Nº 35 Técnica Gral. San Martín','Pública',15,14,93,'Sistemas, Administración'],['Esc. Privada D-198 San José','No adv.',14,14,100,'Contador, Sistemas']];
+  const tc=document.getElementById('tbl_er_col');
+  if(tc){
+    tc.innerHTML='<thead><tr><th>Colegio</th><th>Tipo</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Carreras</th></tr></thead><tbody>';
+    colER.forEach(([inst,tipo,adm,mat,p,carr],i)=>{
+      const tc2=tipo==='Adv.'?'vd':tipo==='No adv.'?'az':'na';
+      const cc=p>=88?'vd':p>=80?'az':p>=70?'na':'rj';
+      tc.innerHTML+=`<tr><td style="font-size:11px"><strong>${inst}</strong></td><td><span class="bdg ${tc2}" style="font-size:9px">${tipo}</span></td><td class="num">${adm}</td><td class="num">${mat}</td><td class="num"><span class="bdg ${cc}">${p}%</span></td><td style="font-size:10px;color:var(--gr)">${carr}</td></tr>`;
+    });
+    tc.innerHTML+='</tbody>';
+  }
+
+  const er5=document.getElementById('c_er5');
+  if(er5){
+    const canalER=[['Familiar',305,280,91.8],['Visita colegio',202,177,87.6],['Amigo',163,108,66.3],['Página Web',134,99,73.9],['Iglesia',94,75,79.8]];
+    new Chart(er5,{type:'bar',data:{labels:canalER.map(r=>r[0]),datasets:[{label:'Admitidos',data:canalER.map(r=>r[1]),backgroundColor:'rgba(46,91,168,0.2)',borderRadius:4},{label:'Matriculados',data:canalER.map(r=>r[2]),backgroundColor:canalER.map(r=>{const p=r[3];return p>=88?'#1A7A4A':p>=80?'#2E5BA8':p>=70?'#C75B1A':'#A93226';}),borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{font:{size:10},color:'#566573',boxWidth:9,padding:10}},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}}}}});
+  }
+
+  const er6=document.getElementById('c_er6');
+  if(er6) new Chart(er6,{type:'bar',data:{labels:['Crespo','Paraná','Libertador','Diamante','Concordia','Gral. Ramírez','Chajarí','Lib. San Martín','Viale','Gualeguaychú'],datasets:[{data:[144,117,116,73,35,28,25,20,14,8],backgroundColor:'#2E5BA8',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573',font:{size:10}}}},indexAxis:'y'}});
 })();
 
-// ── PROYECCIÓN ──
+// ── INTERNACIONAL COLEGIOS ──
 (function(){
-  const p=D.proj;if(!p)return;
-  const t2=document.getElementById('tbl_proj2');
-  if(t2){
-    const rows=[['Pesimista',p.pesi,'93.1%'],['Director (est.)',p.director,'94.1%'],['Base',p.base,'97.2%'],['Optimista',p.opti,'99.5%']];
-    const cls=['rj','az','vd','am'];
-    t2.innerHTML='<thead><tr><th>Escenario</th><th class="num">Mat. proy.</th><th class="num">Tasa ini→fin</th><th class="num">Gap vs 550</th><th class="num">Pendientes necesarios</th></tr></thead><tbody>';
-    rows.forEach(([esc,mat,tif],i)=>{
-      const need=mat-p.fin_actual;const pend=p.pendientes>0?Math.round(need/p.pendientes*100):0;
-      t2.innerHTML+=`<tr><td><strong>${esc}</strong></td><td class="num"><strong>${mat}</strong></td><td class="num"><span class="bdg ${cls[i]}">${tif}</span></td><td class="num" style="color:var(--rj)">-${OBJETIVO_2027-mat}</td><td class="num">${need} (${pend}% de ${p.pendientes})</td></tr>`;
+  const ti=document.getElementById('tbl_intl_col');
+  if(ti){
+    const intlColData=[
+      ['Inst. Adventista Brasil Central','Brasileña',38,34,89,'↑ Creciendo','Pre./Medicina'],
+      ['Inst. Adventista del Uruguay','Uruguaya',36,34,94,'↑ Creciendo','Sistemas, Kines.'],
+      ['Inst. Adventista de Ens. Sta. Catarina','Brasileña',31,28,90,'↑ Creciendo','Medicina, Pre.'],
+      ['Inst. Adventista Cruzeiro do Sul','Brasileña',21,19,90,'↓ Cayendo','Pre./Medicina'],
+      ['Faculdade Adventista da Amazônia','Brasileña',19,17,89,'↑ Activo','Medicina, Pre.'],
+      ['Colegio Adventista UNASP - San Pablo','Brasileña',18,17,94,'⬛ Sin actividad rec.','Pre./Medicina'],
+      ['Colegio Adventista del Pacífico','Ecuatoriana',18,14,78,'↓ Cayendo','Pre., Nutrición'],
+      ['IAESC','Brasileña',15,13,87,'↑ Creciendo','Pre./Medicina'],
+      ['Colegio Adventista Gedeón','Ecuatoriana',14,10,71,'⬛ Sin actividad rec.','Pre., Kines.'],
+      ['IPAE','Brasileña',14,14,100,'⬛ Sin actividad rec.','Pre./Medicina'],
+      ['Inst. Adventista Panameño','Panameña',10,9,90,'⬛ Sin actividad rec.','Psicología, Nutr.'],
+      ['Col. Adventista del Este Paraguayo','Paraguaya',8,7,88,'↓ Cayendo','Psicología, Com.'],
+      ['Unidad Ed. Adventista del Pacífico','Ecuatoriana',8,8,100,'↑ Activo','Odontología'],
+      ['Centro Ed. Adventista de Bolivia','Boliviana',8,6,75,'⬛ Sin actividad rec.','Com., Enfermería'],
+    ];
+    ti.innerHTML='<thead><tr><th>Institución</th><th>País</th><th class="num">Adm.</th><th class="num">Mat.</th><th class="num">Conv.</th><th>Tendencia</th><th>Carrera top</th></tr></thead><tbody>';
+    intlColData.forEach(([inst,pais,adm,mat,pct,tend,carr],i)=>{
+      const cc=pct>=88?'vd':pct>=80?'az':pct>=70?'na':'rj';
+      const tc=tend.includes('↑')?'#1A7A4A':tend.includes('⬛')?'#888':'#A93226';
+      const bg=i%2===0?'':'var(--grL)';
+      ti.innerHTML+=`<tr style="background:${bg}"><td style="font-size:11px"><strong>${inst}</strong></td><td style="font-size:11px;color:var(--gr)">${pais}</td><td class="num">${adm}</td><td class="num">${mat}</td><td class="num"><span class="bdg ${cc}">${pct}%</span></td><td style="font-size:11px;color:${tc};font-weight:500">${tend}</td><td style="font-size:10px;color:var(--gr)">${carr}</td></tr>`;
     });
-    t2.innerHTML+='</tbody>';
+    ti.innerHTML+='</tbody>';
   }
-  const cproj=document.getElementById('c_proj');
-  if(cproj){
-    const fins=[...FIN.slice(0,-1)];
-    const labels2=[...YRS_STR.slice(0,-1),String(ANIO_ABIERTO)+' (actual)',String(ANIO_ABIERTO)+' Pesi.',String(ANIO_ABIERTO)+' Dir.',String(ANIO_ABIERTO)+' Base',String(ANIO_ABIERTO)+' Opti.'];
-    const vals2=[...fins,p.fin_actual,p.pesi,p.director,p.base,p.opti];
-    const colors=[...Array(fins.length).fill(AZ2),'rgba(46,91,168,0.35)',RJ,'#185FA5',VD,AM];
-    new Chart(cproj,{type:'bar',data:{labels:labels2,datasets:[{data:vals2,backgroundColor:colors,borderRadius:4}]},options:{...go,scales:{x:{...go.scales.x,ticks:{font:{size:10},color:'#566573'}},y:{...go.scales.y,min:400,max:750}}}});
+
+  const br=document.getElementById('c_intl_br');
+  if(br) new Chart(br,{type:'line',data:{labels:['2020','2021','2022','2023','2024','2025','2026'],datasets:[
+    {label:'Brasil Central',data:[4,7,6,6,11,0,4],borderColor:'#D85A30',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+    {label:'Ens. Sta. Catarina',data:[0,0,9,4,11,5,2],borderColor:'#2E5BA8',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+    {label:'IAESC',data:[0,1,2,2,7,2,1],borderColor:'#1A7A4A',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+    {label:'UNASP San Pablo',data:[5,1,6,3,2,0,1],borderColor:'#BA7517',backgroundColor:'transparent',pointRadius:3,borderWidth:2,tension:0.3},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{font:{size:10},color:'#566573',boxWidth:9,padding:10}},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}}}}});
+
+  const iti=document.getElementById('c_intl_ti');
+  if(iti) new Chart(iti,{type:'bar',data:{labels:['Adventista','No adventista','Pública'],datasets:[{label:'Admitidos',data:[975,204,298],backgroundColor:'rgba(46,91,168,0.2)',borderColor:'#2E5BA8',borderWidth:1,borderRadius:4},{label:'Matriculados',data:[807,169,232],backgroundColor:['#1A7A4A','#2E5BA8','#C75B1A'],borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,position:'top',labels:{font:{size:10},color:'#566573',boxWidth:9,padding:10}},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}},y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'}}}}});
+})();
+
+
+// ── PROYECCIÓN 2026 ──
+(function(){
+  const p = D.proj_2026;
+  if(!p) return;
+
+  // Tabla escenarios
+  const t = document.getElementById('tbl_proj_esc');
+  if(t){
+    const rows = [
+      ['Pesimista', p.pesi, p.tasa_min+'%', 'Igual a 2024 — peor año normal'],
+      ['Director (est.)', p.director, '94.5%', 'Estimación conservadora'],
+      ['Base', p.base, p.tasa_prom+'%', 'Promedio histórico 2020–2025'],
+      ['Optimista', p.opti, p.tasa_max+'%', 'Igual a 2023 — mejor año'],
+    ];
+    const cls = ['rj','az','vd','am'];
+    t.innerHTML = '<thead><tr><th>Escenario</th><th class="num">Mat. proy.</th><th class="num">Tasa ini→fin</th><th class="num">Gap vs 550</th><th class="num">Pendientes necesarios</th><th>Referencia</th></tr></thead><tbody>';
+    rows.forEach(([esc,mat,tif,ref],i)=>{
+      const need = mat - p.fin_actual;
+      const pend = p.pendientes > 0 ? Math.round(need/p.pendientes*100) : 0;
+      t.innerHTML += `<tr><td><strong>${esc}</strong></td><td class="num"><strong>${mat}</strong></td><td class="num"><span class="bdg ${cls[i]}">${tif}</span></td><td class="num" style="color:var(--rj)">−${550-mat}</td><td class="num">${need} (${pend}%)</td><td style="font-size:11px;color:var(--gr)">${ref}</td></tr>`;
+    });
+    t.innerHTML += '</tbody>';
+  }
+
+  // Gráfico histórico + escenarios
+  const cp = document.getElementById('c_proj_hist');
+  if(cp){
+    const YRS_STR_LOCAL = ['2020','2021','2022','2023','2024','2025','2026\n(actual)','2026\nPesi.','2026\nDir.','2026\nBase','2026\nOpti.'];
+    const fins = ['2020','2021','2022','2023','2024','2025'].map(y=>D.embudo_global[y].fin);
+    const vals = [...fins, p.fin_actual, p.pesi, p.director, p.base, p.opti];
+    const colors = [...Array(6).fill('#2E5BA8'), 'rgba(46,91,168,0.35)', '#A93226','#185FA5','#1A7A4A','#BA7517'];
+    new Chart(cp,{type:'bar',data:{labels:YRS_STR_LOCAL,datasets:[{data:vals,backgroundColor:colors,borderRadius:4}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},
+        scales:{x:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573',font:{size:10}}},
+                y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'},min:400,max:700}}}});
   }
 })();
 
