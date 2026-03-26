@@ -57,7 +57,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <div class="hdr">
   <div>
     <h1>Universidad Adventista del Plata — Dashboard Integral de Admisiones</h1>
-    <p>2020–2026 · 4.516 admitidos · 3.811 matriculados · 2026: ciclo abierto (575 adm · 466 mat parcial · proy. base: 495)</p>
+    <p>2020–2026 · 4.516 admitidos · 3.811 matriculados · 2026: ciclo abierto (591 adm · 478 mat parcial · proy. base: 499)</p>
   </div>
   <div class="hbadge">Dirección de Marketing</div>
 </div>
@@ -91,11 +91,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- RESUMEN -->
 <div id="tab-resumen" class="page active">
   <div class="kg">
-    <div class="kpi"><div class="kl">Total admitidos</div><div class="kv">4.500</div><div class="ks">2020–2026 · base corregida</div></div>
-    <div class="kpi vd"><div class="kl">Total matriculados</div><div class="kv">3.799</div><div class="ks">84.4% conversión global</div></div>
+    <div class="kpi"><div class="kl">Total admitidos</div><div class="kv" kpi-total-adm-kv">4.516</div><div class="ks">2020–2026 · base corregida</div></div>
+    <div class="kpi vd"><div class="kl">Total matriculados</div><div class="kv" kpi-total-fin-kv">3.811</div><div class="ks" kpi-total-fin-ks">84.4% conversión global</div></div>
     <div class="kpi"><div class="kl">Pico admitidos</div><div class="kv">764</div><div class="ks">2022</div></div>
     <div class="kpi na"><div class="kl">Valle reciente</div><div class="kv">494</div><div class="ks">2025 · −35% vs pico</div></div>
-    <div class="kpi vd"><div class="kl">Recuperación 2026</div><div class="kv">+16%</div><div class="ks">574 vs 494</div></div>
+    <div class="kpi vd"><div class="kl">Recuperación 2026</div><div class="kv">−23%</div><div class="ks">574 vs 494</div></div>
     <div class="kpi"><div class="kl">Arg / Ext promedio</div><div class="kv">67 / 33</div><div class="ks">% del período</div></div>
   </div>
   <div class="g2">
@@ -120,9 +120,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- EMBUDO -->
 <div id="tab-embudo" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Adm → Inició</div><div class="kv">85.6%</div><div class="ks">643 no inician — pérdida principal</div></div>
-    <div class="kpi vd"><div class="kl">Inició → Finalizó</div><div class="kv">96.0%</div><div class="ks">Solo 153 no terminan</div></div>
-    <div class="kpi vd"><div class="kl">Conversión total</div><div class="kv">82.2%</div><div class="ks">3.682 de 4.478</div></div>
+    <div class="kpi"><div class="kl">Adm → Inició</div><div class="kv">88.3%</div><div class="ks">530 no inician — pérdida principal</div></div>
+    <div class="kpi vd"><div class="kl">Inició → Finalizó</div><div class="kv">95.6%</div><div class="ks">Solo 175 no terminan</div></div>
+    <div class="kpi vd"><div class="kl">Conversión total</div><div class="kv">84.4%</div><div class="ks">3.811 de 4.516</div></div>
     <div class="kpi na"><div class="kl">Mayor pérdida</div><div class="kv">Etapa 1</div><div class="ks">Admitido → inicia inscripción</div></div>
     <div class="kpi"><div class="kl">Mejor año</div><div class="kv">2023</div><div class="ks">95.1%</div></div>
     <div class="kpi rj"><div class="kl">Menor conversión</div><div class="kv">2021</div><div class="ks">76.1% — menor del período</div></div>
@@ -154,7 +154,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
   <div class="kg">
     <div class="kpi vd"><div class="kl">Mayor conversión</div><div class="kv">98%</div><div class="ks">Medicina (examen previo)</div></div>
     <div class="kpi rj"><div class="kl">Menor conv. estructural</div><div class="kv">71%</div><div class="ks">Enfermería (sin años atípicos)</div></div>
-    <div class="kpi"><div class="kl">Mayor volumen</div><div class="kv">Psicología</div><div class="ks">473 adm · 86% conv.</div></div>
+    <div class="kpi"><div class="kl">Mayor volumen</div><div class="kv">Psicología</div><div class="ks" kpi-psi-ks">473 adm · 88% conv.</div></div>
     <div class="kpi na"><div class="kl">Enf. 2024 convenio</div><div class="kv">49%</div><div class="ks">98 adm · 48 mat.</div></div>
   </div>
   <div class="card">
@@ -178,12 +178,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- MEDICINA Y PRE -->
 <div id="tab-medicina" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Preuniversitario adm.</div><div class="kv">637</div><div class="ks">77% extranjeros</div></div>
-    <div class="kpi"><div class="kl">Conv. Pre</div><div class="kv">76%</div><div class="ks">486 finalizaron</div></div>
+    <div class="kpi"><div class="kl">Preuniversitario adm.</div><div class="kv">638</div><div class="ks">77% extranjeros</div></div>
+    <div class="kpi"><div class="kl">Conv. Pre</div><div class="kv">76%</div><div class="ks" kpi-pre-fin-ks">515 finalizaron</div></div>
     <div class="kpi vd"><div class="kl">Medicina adm.</div><div class="kv">310</div><div class="ks">Cupo 90/año · examen elim.</div></div>
     <div class="kpi vd"><div class="kl">Conv. Medicina</div><div class="kv">98%</div><div class="ks">Filtrado por examen previo</div></div>
-    <div class="kpi"><div class="kl">Medicina: % ext.</div><div class="kv">62%</div><div class="ks">193 de 310</div></div>
-    <div class="kpi na"><div class="kl">Pre 2025 vs 2024</div><div class="kv">−69%</div><div class="ks">43 vs 140</div></div>
+    <div class="kpi"><div class="kl">Medicina: % ext.</div><div class="kv">62%</div><div class="ks">307 de 310</div></div>
+    <div class="kpi na"><div class="kl">Pre 2025 vs 2024</div><div class="kv">−69%</div><div class="ks">29 vs 140</div></div>
   </div>
   <div class="ins az"><strong>El Preuniversitario es el pipeline de Medicina.</strong> La caída del Pre en 2025-2026 por el colapso internacional es directamente la caída del pipeline hacia Medicina. Recuperar el segmento internacional recupera el futuro de esta carrera.</div>
   <div class="g2">
@@ -202,11 +202,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- LOCAL -->
 <div id="tab-local" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Argentinos admitidos</div><div class="kv">3.009</div><div class="ks">67% del total</div></div>
-    <div class="kpi vd"><div class="kl">Matriculados locales</div><div class="kv">2.513</div><div class="ks">83.5% conversión</div></div>
+    <div class="kpi"><div class="kl">Argentinos admitidos</div><div class="kv" kpi-arg-adm-kv">3.031</div><div class="ks">67% del total</div></div>
+    <div class="kpi vd"><div class="kl">Matriculados locales</div><div class="kv">2.590</div><div class="ks">83.5% conversión</div></div>
     <div class="kpi"><div class="kl">Provincia #1</div><div class="kv">Entre Ríos</div><div class="ks">1.021 · 34% del total local</div></div>
     <div class="kpi am"><div class="kl">Región top conv.</div><div class="kv">Patagonia</div><div class="ks">87% — la más alta</div></div>
-    <div class="kpi"><div class="kl">Adventistas locales</div><div class="kv">61.9%</div><div class="ks">1.862 de 3.009</div></div>
+    <div class="kpi"><div class="kl">Adventistas locales</div><div class="kv">47.5%</div><div class="ks">2.590 de 3.031</div></div>
     <div class="kpi na"><div class="kl">Crecimiento local</div><div class="kv">Estancado</div><div class="ks">Oscila 360→507 sin tendencia</div></div>
   </div>
   <div class="g2">
@@ -234,14 +234,14 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- ENTRE RÍOS -->
 <div id="tab-entrerios" class="page">
   <div class="kg">
-    <div class="kpi vd"><div class="kl">Crecimiento 2020→2026</div><div class="kv">+110%</div><div class="ks">82 → 172 admitidos</div></div>
-    <div class="kpi"><div class="kl">Total período</div><div class="kv">1.028</div><div class="ks">22.8% del total nacional</div></div>
-    <div class="kpi vd"><div class="kl">Conversión global</div><div class="kv">85.1%</div><div class="ks">876 matriculados</div></div>
+    <div class="kpi vd"><div class="kl">Crecimiento 2020→2026</div><div class="kv" kpi-er-crec-kv">+118%</div><div class="ks">82 → 172 admitidos</div></div>
+    <div class="kpi"><div class="kl">Total período</div><div class="kv">1.035</div><div class="ks">22.8% del total nacional</div></div>
+    <div class="kpi vd"><div class="kl">Conversión global</div><div class="kv" kpi-er-conv-kv">84.9%</div><div class="ks" kpi-er-mat-ks">879 matriculados</div></div>
     <div class="kpi"><div class="kl">Pico</div><div class="kv">192</div><div class="ks">2024 — mayor año del período</div></div>
     <div class="kpi"><div class="kl">Localidad #1</div><div class="kv">Paraná</div><div class="ks">179 adm · 82% conv.</div></div>
     <div class="kpi vd"><div class="kl">Libertador San Martín</div><div class="kv">92%</div><div class="ks">208 adm (ciudad campus)</div></div>
   </div>
-  <div class="ins vd"><strong>Entre Ríos es la región de mayor crecimiento absoluto del período.</strong> Pasó de 82 admitidos en 2020 a 172 en 2026 — un crecimiento del +110%. No es un pico aislado: el 2026 es el segundo año más alto de toda la serie. A diferencia del crecimiento 2020–2024 que fue parcialmente impulsado por extranjeros, En Entre Ríos el crecimiento es casi completamente local. Es la región que más oportunidad tiene para seguir escalando.</div>
+  <div class="ins vd"><strong>Entre Ríos es la región de mayor crecimiento absoluto del período.</strong> Pasó de 82 admitidos en 2020 a 172 en 2026 — un crecimiento del +118%. No es un pico aislado: el 2026 es el segundo año más alto de toda la serie. A diferencia del crecimiento 2020–2024 que fue parcialmente impulsado por extranjeros, En Entre Ríos el crecimiento es casi completamente local. Es la región que más oportunidad tiene para seguir escalando.</div>
   <div class="g2">
     <div class="card"><div class="ct">Admitidos Entre Ríos por año</div>
       <div class="cw" style="height:220px"><canvas id="c_er1"></canvas></div>
@@ -278,11 +278,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- COLEGIOS -->
 <div id="tab-colegios" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Top 3 colegios adv.</div><div class="kv">670</div><div class="ks">Balcarce + ISAM + IAP = 22% local</div></div>
-    <div class="kpi vd"><div class="kl">Conv. colegio adv.</div><div class="kv">88.9%</div><div class="ks">vs 75.1% pública</div></div>
-    <div class="kpi vd"><div class="kl">Balcarce</div><div class="kv">94.7%</div><div class="ks">262 adm · 248 mat.</div></div>
-    <div class="kpi"><div class="kl">IAP unificado (D-4+D-222)</div><div class="kv">187</div><div class="ks">92.0% conversión</div></div>
-    <div class="kpi"><div class="kl">Inst. Crespo (no adv.)</div><div class="kv">97.4%</div><div class="ks">39 adm · mayor conv. de todos</div></div>
+    <div class="kpi"><div class="kl">Top 3 colegios adv.</div><div class="kv">669</div><div class="ks">Balcarce + ISAM + IAP = 22% local</div></div>
+    <div class="kpi vd"><div class="kl">Conv. colegio adv.</div><div class="kv">91.9%</div><div class="ks">vs 76.9% pública</div></div>
+    <div class="kpi vd"><div class="kl">Balcarce</div><div class="kv" kpi-col1-kv">97.3%</div><div class="ks" kpi-col1-ks">261 adm · 254 mat.</div></div>
+    <div class="kpi"><div class="kl">IAP unificado (D-4+D-222)</div><div class="kv">187</div><div class="ks">95.7% conversión</div></div>
+    <div class="kpi"><div class="kl">Inst. Crespo (no adv.)</div><div class="kv">97.4%</div><div class="ks">39 adm · 94.9% conv.</div></div>
     <div class="kpi na"><div class="kl">Colegios públicos</div><div class="kv">75.1%</div><div class="ks">La más baja por tipo</div></div>
   </div>
   <div class="card"><div class="ct">Top colegios adventistas — evolución anual (admitidos)</div>
@@ -307,12 +307,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- INTERNACIONAL -->
 <div id="tab-internacional" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Total extranjeros adm.</div><div class="kv">1.469</div><div class="ks">33% del total período</div></div>
-    <div class="kpi"><div class="kl">Conv. extranjeros</div><div class="kv">79.6%</div><div class="ks">Etapa 2: 97% (casi sin caída)</div></div>
+    <div class="kpi"><div class="kl">Total extranjeros adm.</div><div class="kv">1.408</div><div class="ks">31% del total período</div></div>
+    <div class="kpi"><div class="kl">Conv. extranjeros</div><div class="kv">83.0%</div><div class="ks">Etapa 2: 97% (casi sin caída)</div></div>
     <div class="kpi rj"><div class="kl">Caída 2024→2025</div><div class="kv">−55%</div><div class="ks">255→116 extranjeros</div></div>
-    <div class="kpi"><div class="kl">Principal mercado</div><div class="kv">Brasil</div><div class="ks">586 adm · 83% conv.</div></div>
-    <div class="kpi vd"><div class="kl">Mercado modelo</div><div class="kv">Uruguay</div><div class="ks">92% inicio · 90% final</div></div>
-    <div class="kpi na"><div class="kl">Brasil 2026 vs 2024</div><div class="kv">−81%</div><div class="ks">24 vs 129</div></div>
+    <div class="kpi"><div class="kl">Principal mercado</div><div class="kv">Brasil</div><div class="ks">593 adm · 85% conv.</div></div>
+    <div class="kpi vd"><div class="kl">Mercado modelo</div><div class="kv">Uruguay</div><div class="ks">99% inicio · 97% final</div></div>
+    <div class="kpi na"><div class="kl">Brasil 2026 vs 2024</div><div class="kv">−81%</div><div class="ks">30 vs 129</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Top 6 países — admitidos por año</div>
@@ -326,7 +326,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
     <table class="tbl" id="tbl_intl"></table>
   </div>
   <div class="card" style="margin-top:13px"><div class="ct">Colegios adventistas internacionales — fuente de admitidos por país</div>
-    <div class="ins az" style="margin-bottom:12px"><strong>El 66% de los extranjeros viene de colegios adventistas.</strong> 975 de 1.469 admitidos internacionales son de instituciones adventistas. La red adventista global es el canal más sólido — mayor conversión (82.8%) que pública (77.9%) y comparable con privada no adventista. El conocimiento de los colegios por país permite activar la captación con precisión quirúrgica.</div>
+    <div class="ins az" style="margin-bottom:12px"><strong>El 66% de los extranjeros viene de colegios adventistas.</strong> 975 de 1408 admitidos internacionales son de instituciones adventistas. La red adventista global es el canal más sólido — mayor conversión (82.8%) que pública (77.9%) y comparable con privada no adventista. El conocimiento de los colegios por país permite activar la captación con precisión quirúrgica.</div>
     <table class="tbl" id="tbl_intl_col"></table>
   </div>
   <div class="g2" style="margin-top:13px">
@@ -345,10 +345,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
   <div class="kg">
     <div class="kpi"><div class="kl">Edad media matr.</div><div class="kv">22.0</div><div class="ks">mediana: 21 años</div></div>
     <div class="kpi na"><div class="kl">Edad media no matr.</div><div class="kv">25.3</div><div class="ks">+3.3 años de diferencia</div></div>
-    <div class="kpi"><div class="kl">Mayoría femenina</div><div class="kv">58.7%</div><div class="ks">2.627 mujeres</div></div>
+    <div class="kpi"><div class="kl">Mayoría femenina</div><div class="kv" kpi-pct-f-kv">58.5%</div><div class="ks" kpi-sexo-f-ks">2.644 mujeres</div></div>
     <div class="kpi vd"><div class="kl">Conv. Internos</div><div class="kv">84.7%</div><div class="ks">vs 79.4% Externos</div></div>
-    <div class="kpi"><div class="kl">Conv. ≤20 años</div><div class="kv">89%</div><div class="ks">vs 62% mayores de 30</div></div>
-    <div class="kpi na"><div class="kl">Conv. casados</div><div class="kv">67.1%</div><div class="ks">vs 84.6% solteros</div></div>
+    <div class="kpi"><div class="kl">Conv. ≤20 años</div><div class="kv">91%</div><div class="ks">vs 62% mayores de 30</div></div>
+    <div class="kpi na"><div class="kl">Conv. casados</div><div class="kv">76.9%</div><div class="ks">vs 84.6% solteros</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Embudo por grupo etario</div>
@@ -372,11 +372,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- CANALES -->
 <div id="tab-canales" class="page">
   <div class="kg">
-    <div class="kpi vd"><div class="kl">Canal top: Familiar</div><div class="kv">89.5%</div><div class="ks">865 adm. locales</div></div>
+    <div class="kpi vd"><div class="kl">Canal top: Familiar</div><div class="kv" kpi-fam-conv-kv">91.3%</div><div class="ks" kpi-fam-adm-ks">871 adm. locales</div></div>
     <div class="kpi"><div class="kl">Visita al colegio</div><div class="kv">85%</div><div class="ks">Mejor canal no adventistas</div></div>
-    <div class="kpi rj"><div class="kl">Página Web</div><div class="kv">68%</div><div class="ks">La más baja</div></div>
-    <div class="kpi na"><div class="kl">Adv. + Web</div><div class="kv">59.1%</div><div class="ks">Mayor predisposición, peor journey</div></div>
-    <div class="kpi vd"><div class="kl">Adv. + Familiar</div><div class="kv">90.6%</div><div class="ks">El combo de mayor conversión</div></div>
+    <div class="kpi rj"><div class="kl">Página Web</div><div class="kv" kpi-web-conv-kv">70%</div><div class="ks">La más baja</div></div>
+    <div class="kpi na"><div class="kl">Adv. + Web</div><div class="kv">54%</div><div class="ks" kpi-adv-web-ks">Mayor predisposición, peor journey</div></div>
+    <div class="kpi vd"><div class="kl">Adv. + Familiar</div><div class="kv">92.6%</div><div class="ks">El combo de mayor conversión</div></div>
     <div class="kpi"><div class="kl">Sin dato registrado</div><div class="kv">202</div><div class="ks">Corrección pendiente en sistemas</div></div>
   </div>
   <div class="g2">
@@ -395,11 +395,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- RAZONES -->
 <div id="tab-razones" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Univ. cristiana</div><div class="kv">2.187</div><div class="ks">48.8% del total · 82.9% conv.</div></div>
-    <div class="kpi"><div class="kl">Excelencia académica</div><div class="kv">1.121</div><div class="ks">25.0% · 81.4% conv.</div></div>
-    <div class="kpi"><div class="kl">Seguridad y ambiente</div><div class="kv">644</div><div class="ks">14.4% · 84.0% conv.</div></div>
-    <div class="kpi"><div class="kl">Cercanía</div><div class="kv">226</div><div class="ks">5.0% · 81.0% conv.</div></div>
-    <div class="kpi"><div class="kl">Texto libre</div><div class="kv">298</div><div class="ks">6.7% respondió abiertamente</div></div>
+    <div class="kpi"><div class="kl">Univ. cristiana</div><div class="kv" kpi-rz-c-kv">2.193</div><div class="ks" kpi-rz-c-ks">48.6% del total · 85.3% conv.</div></div>
+    <div class="kpi"><div class="kl">Excelencia académica</div><div class="kv" kpi-rz-e-kv">1.125</div><div class="ks" kpi-rz-e-ks">24.9% · 84.0% conv.</div></div>
+    <div class="kpi"><div class="kl">Seguridad y ambiente</div><div class="kv" kpi-rz-s-kv">649</div><div class="ks" kpi-rz-s-ks">14.4% · 86.4% conv.</div></div>
+    <div class="kpi"><div class="kl">Cercanía</div><div class="kv" kpi-rz-ca-kv">229</div><div class="ks" kpi-rz-ca-ks">5.1% · 79.5% conv.</div></div>
+    <div class="kpi"><div class="kl">Texto libre</div><div class="kv" kpi-rz-lib-kv">326</div><div class="ks" kpi-rz-lib-ks">7.2% respondió abiertamente</div></div>
     <div class="kpi vd"><div class="kl">Mayor conv. texto libre</div><div class="kv">87%</div><div class="ks">Combinación de motivos</div></div>
   </div>
   <div class="g2">
@@ -411,7 +411,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
     </div>
   </div>
   <div class="card"><div class="ct">Análisis de texto libre — 298 respuestas categorizadas</div>
-    <div class="ins az" style="margin-bottom:12px"><strong>El 6.7% respondió con texto libre.</strong> Estas respuestas revelan motivaciones que las 4 opciones estándar no capturan: vocación misionera, búsqueda de modalidad virtual, referidos familiares con historia en UAP, y una demanda de la única carrera de Teología adventista en Argentina.</div>
+    <div class="ins az" style="margin-bottom:12px"><strong>El 7.2% respondió con texto libre.</strong> Estas respuestas revelan motivaciones que las 4 opciones estándar no capturan: vocación misionera, búsqueda de modalidad virtual, referidos familiares con historia en UAP, y una demanda de la única carrera de Teología adventista en Argentina.</div>
     <table class="tbl" id="tbl_libre"></table>
   </div>
   <div class="g2">
@@ -448,15 +448,15 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
 <!-- PROYECCIÓN 2026 -->
 <div id="tab-proyeccion" class="page">
   <div class="kg">
-    <div class="kpi"><div class="kl">Admitidos 2026</div><div class="kv">575</div><div class="ks">~90% del ciclo cerrado</div></div>
-    <div class="kpi"><div class="kl">Iniciaron</div><div class="kv">514</div><div class="ks">89.4% de los admitidos</div></div>
-    <div class="kpi na"><div class="kl">Finalizaron (parcial)</div><div class="kv">466</div><div class="ks">90.7% de quienes iniciaron</div></div>
-    <div class="kpi na"><div class="kl">Pendientes</div><div class="kv">48</div><div class="ks">Iniciaron · no finalizaron aún</div></div>
-    <div class="kpi vd"><div class="kl">Proyección base</div><div class="kv">495</div><div class="ks">Tasa histórica 96.3%</div></div>
-    <div class="kpi"><div class="kl">Gap vs objetivo 550</div><div class="kv">−55</div><div class="ks">Rango: −74 a −38</div></div>
+    <div class="kpi"><div class="kl">Admitidos 2026</div><div class="kv">591</div><div class="ks">~88% del ciclo cerrado</div></div>
+    <div class="kpi"><div class="kl">Iniciaron</div><div class="kv">519</div><div class="ks">87.8% de los admitidos</div></div>
+    <div class="kpi na"><div class="kl">Finalizaron (parcial)</div><div class="kv">478</div><div class="ks">92.1% de quienes iniciaron</div></div>
+    <div class="kpi na"><div class="kl">Pendientes</div><div class="kv">41</div><div class="ks">Iniciaron · no finalizaron aún</div></div>
+    <div class="kpi vd"><div class="kl">Proyección base</div><div class="kv">499</div><div class="ks">Tasa histórica 96.2%</div></div>
+    <div class="kpi"><div class="kl">Gap vs objetivo 550</div><div class="kv">−51</div><div class="ks">Rango: −69 a −33</div></div>
   </div>
 
-  <div class="ins az"><strong>Los 48 pendientes son personas que ya tomaron la decisión.</strong> Históricamente, entre el 93% y el 99.5% de quienes inician terminan de matricularse. La estimación del director (480) implicaría que solo el 29% de los pendientes completa el proceso — más conservadora que cualquier año histórico. El escenario base (495) es el más probable.</div>
+  <div class="ins az"><strong>Los 41 pendientes son personas que ya tomaron la decisión.</strong> Históricamente, entre el 92.7% y el 99.5% de quienes inician terminan de matricularse. La estimación del director (480) implicaría que solo el 5% de los pendientes completa el proceso — más conservadora que cualquier año histórico. El escenario base (499) es el más probable.</div>
 
   <div class="g2">
     <div class="card">
@@ -474,13 +474,13 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin-bottom:14px">
       <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
         <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Adm → Inició</div>
-        <div style="font-size:26px;font-weight:700;color:var(--az2)">89.4%</div>
-        <div style="font-size:10px;color:var(--gr);margin-top:3px">514 de 575</div>
+        <div style="font-size:26px;font-weight:700;color:var(--az2)">87.8%</div>
+        <div style="font-size:10px;color:var(--gr);margin-top:3px">519 de 591</div>
       </div>
       <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
         <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Inició → Finalizó</div>
-        <div style="font-size:26px;font-weight:700;color:var(--na)">90.7%</div>
-        <div style="font-size:10px;color:var(--gr);margin-top:3px">466 de 514 · parcial</div>
+        <div style="font-size:26px;font-weight:700;color:var(--na)">92.1%</div>
+        <div style="font-size:10px;color:var(--gr);margin-top:3px">478 de 519 · parcial</div>
       </div>
       <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
         <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Promedio histórico ini→fin</div>
@@ -489,11 +489,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
       </div>
       <div style="text-align:center;padding:14px;background:var(--grL);border-radius:8px;border:1px solid var(--grB)">
         <div style="font-size:10px;color:var(--gr);text-transform:uppercase;margin-bottom:6px">Pendientes de finalizar</div>
-        <div style="font-size:26px;font-weight:700;color:var(--na)">48</div>
+        <div style="font-size:26px;font-weight:700;color:var(--na)">41</div>
         <div style="font-size:10px;color:var(--gr);margin-top:3px">arreglos financieros en curso</div>
       </div>
     </div>
-    <div class="ins na"><strong>¿Por qué la tasa ini→fin actual (90.7%) es menor al histórico (96.3%)?</strong> Porque el ciclo está abierto — los 48 pendientes están en proceso. Cuando cierren, la tasa final se acercará al histórico. El 90.7% es una fotografía de mitad de proceso, no el resultado final.</div>
+    <div class="ins na"><strong>¿Por qué la tasa ini→fin actual (92.1%) es menor al histórico (96.2%)?</strong> Porque el ciclo está abierto — los 41 pendientes están en proceso. Cuando cierren, la tasa final se acercará al histórico. El 92.1% es una fotografía de mitad de proceso, no el resultado final.</div>
   </div>
 </div>
 
@@ -507,10 +507,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
     <div class="ins rj"><strong>4. Brasil es la variable crítica.</strong> 586 adm. históricos, 83% conv. Pasó de 129 (2024) a 24 (2026). Recuperar 60 brasileños anuales cierra casi la mitad del gap hacia 550.</div>
     <div class="ins vd"><strong>5. Uruguay es el modelo a replicar.</strong> 92% inicio, 90% final, nunca cayó. Replicar en Bolivia, Paraguay y Perú puede rendir 50-70 admitidos adicionales.</div>
     <div class="ins na"><strong>6. Familiar convierte al 87-90% y está subutilizado.</strong> Solo 28% del total. Programa formal de referidos con incentivo = mayor retorno por menor costo.</div>
-    <div class="ins na"><strong>7. Página Web convierte 68% — y para adventistas 59%.</strong> El prospecto más predispuesto tiene el peor journey. Contacto humano en ≤1h cambia el resultado.</div>
+    <div class="ins na"><strong>7. Página Web convierte 70% — y para adventistas 54.2%.</strong> El prospecto más predispuesto tiene el peor journey. Contacto humano en ≤1h cambia el resultado.</div>
     <div class="ins am"><strong>8. Patagonia: 87% conversión — región más alta del país.</strong> 332 adm., la distancia actúa como filtro de compromiso. Sin estrategia específica. Oportunidad clara.</div>
     <div class="ins az"><strong>9. Tres colegios adventistas generan el 22% de todos los locales.</strong> Balcarce (262, 95%), ISAM (221, 88%), IAP unificado (187, 92%). Un agente referente por colegio = máximo ROI del plan local.</div>
-    <div class="ins vd"><strong>13. Entre Ríos creció +110% en el período y sigue subiendo.</strong> De 82 admitidos en 2020 a 172 en 2026 — el segundo año más alto de toda la serie. A diferencia del crecimiento nacional (impulsado por extranjeros), el de Entre Ríos es local y sostenido. Paraná, Crespo y Diamante concentran el mayor potencial no explotado. Es la región donde más se puede crecer sin inversión en pauta nueva.</div>
+    <div class="ins vd"><strong>13. Entre Ríos creció +118% en el período y sigue subiendo.</strong> De 82 admitidos en 2020 a 172 en 2026 — el segundo año más alto de toda la serie. A diferencia del crecimiento nacional (impulsado por extranjeros), el de Entre Ríos es local y sostenido. Paraná, Crespo y Diamante concentran el mayor potencial no explotado. Es la región donde más se puede crecer sin inversión en pauta nueva.</div>
     <div class="ins rj"><strong>10. Enfermería tiene problema estructural.</strong> En años normales 70-80%, en 2026 sin convenio: 58%. Único caso donde la razón top no es "universidad cristiana" sino "excelencia académica" — perfil pragmático, propuesta diferente.</div>
     <div class="ins az"><strong>11. Quien decide por múltiples razones convierte al 87%.</strong> El nurturing debe construir multicausalidad — no vender un solo argumento sino reforzar todos a la vez.</div>
     <div class="ins rj"><strong>12. Modalidad virtual tiene demanda latente (60% conv.).</strong> Adultos con intención real pero propuesta inadecuada. Segmento propio que necesita journey propio — separado del mensaje de campus residencial.</div>
@@ -666,7 +666,7 @@ new Chart(document.getElementById('c_c3'),{type:'line',data:{labels:YRS,datasets
 ]},options:{...go,plugins:leg()}});
 
 // Tabla Enfermería
-const enfData=[[2020,23,22,22,96,'—'],[2021,47,34,31,66,'—'],[2022,36,26,22,61,'—'],[2023,22,21,19,86,'—'],[2024,98,75,48,49,'Convenio — anomalía'],[2025,46,30,30,65,'—'],[2026,37,34,24,65,'Ciclo abierto']];
+const enfData=[[2020,23,22,22,96,'—'],[2021,47,34,31,66,'—'],[2022,36,26,22,61,'—'],[2023,22,21,19,86,'—'],[2024,98,75,48,49,'Convenio — anomalía'],[2025,46,30,30,65,'—'],[2026,38,35,24,63,'Ciclo abierto']];
 const te=document.getElementById('tbl_enf');
 te.innerHTML='<thead><tr><th>Año</th><th class="num">Adm.</th><th class="num">Inició</th><th class="num">Finalizó</th><th class="num">Conv.</th><th>Contexto</th></tr></thead><tbody>';
 enfData.forEach(([yr,adm,ini,fin,pct,ctx])=>{
@@ -900,7 +900,7 @@ tp2.innerHTML+='</tbody>';
   if(!document.getElementById('c_er1')) return;
   const ER_YRS=['2020','2021','2022','2023','2024','2025','2026'];
   const ER_ADM=[82,124,168,154,192,136,172];
-  const ER_FIN=[80,95,140,148,145,122,144];
+  const ER_FIN=[80,95,140,148,145,122,149];
   const ER_PCT=ER_ADM.map((a,i)=>Math.round(ER_FIN[i]/a*100));
 
   new Chart(document.getElementById('c_er1'),{type:'bar',data:{labels:ER_YRS,datasets:[
@@ -1038,6 +1038,178 @@ tp2.innerHTML+='</tbody>';
                 y:{grid:{color:'rgba(0,0,0,0.04)'},ticks:{color:'#566573'},min:400,max:700}}}});
   }
 })();
+
+
+// ═══════════════════════════════════════════════════════════════
+// AUTO-KPIs: todos los valores estáticos se calculan desde D
+// Esto evita que los textos hardcodeados se desincronicen del JSON
+// ═══════════════════════════════════════════════════════════════
+(function autoKPIs(){
+  const YRS = [2020,2021,2022,2023,2024,2025,2026];
+  const eg  = D.embudo_global;
+  const proj = D.proj || D.proj_2026 || {};
+
+  // Totales
+  const totAdm = YRS.reduce((s,y)=>s+eg[y].adm,0);
+  const totIni = YRS.reduce((s,y)=>s+eg[y].ini,0);
+  const totFin = YRS.reduce((s,y)=>s+eg[y].fin,0);
+  const convGlob = (totFin/totAdm*100).toFixed(1);
+  const tE1 = (totIni/totAdm*100).toFixed(1);
+  const tE2 = (totFin/totIni*100).toFixed(1);
+  const drop1 = totAdm - totIni;
+  const drop2 = totIni - totFin;
+
+  // 2026
+  const adm26=eg[2026].adm, ini26=eg[2026].ini, fin26=eg[2026].fin;
+  const pend26=ini26-fin26;
+  const pctAdmIni26=(ini26/adm26*100).toFixed(1);
+  const pctIniFin26=(fin26/ini26*100).toFixed(1);
+
+  // Proyección
+  const pBase=proj.base||0, pPesi=proj.pesi||0, pOpti=proj.opti||0, pDir=proj.director||480;
+  const tProm=proj.tasa_prom||96.2;
+
+  // Arg / Ext
+  const argAdm=D.local_adm.reduce((s,v)=>s+v,0);
+  const argFin=D.local_fin.reduce((s,v)=>s+v,0);
+  const extAdm=Object.values(D.intl).reduce((s,v)=>s+v.adm,0);
+  const extFin=Object.values(D.intl).reduce((s,v)=>s+v.fin,0);
+  const extPct=Math.round(extAdm/totAdm*100);
+
+  // ER
+  const erAdm=D.entre_rios.adm.reduce((s,v)=>s+v,0);
+  const erFin=D.entre_rios.fin.reduce((s,v)=>s+v,0);
+  const erConv=(erFin/erAdm*100).toFixed(1);
+  const erCrec=Math.round((D.entre_rios.adm[6]-D.entre_rios.adm[0])/D.entre_rios.adm[0]*100);
+  const erPico=Math.max(...D.entre_rios.adm);
+
+  // Colegios
+  const top3Adm=D.colegios.slice(0,3).reduce((s,c)=>s+c.adm,0);
+  const top3Pct=Math.round(top3Adm/argAdm*100);
+  const col1=D.colegios[0]||{}, col2=D.colegios[1]||{}, col3=D.colegios[2]||{};
+  const col_na1=D.no_adv?D.no_adv[0]:{};
+
+  // Canal
+  const fam=D.canales['Familiar']||{}, web=D.canales['Página Web']||{};
+  const famConv=fam.adm?(fam.fin/fam.adm*100).toFixed(1):0;
+  const webConv=web.adm?(web.fin/web.adm*100).toFixed(1):0;
+  const famPct=fam.adm?Math.round(fam.adm/argAdm*100):0;
+  const advFam=(D.canal_rel?.adv?.Familiar)||{};
+  const advFamConv=advFam.adm?(advFam.fin/advFam.adm*100).toFixed(1):0;
+  const advWeb=(D.canal_rel?.adv?.['Página Web'])||{};
+  const advWebConv=advWeb.adm?(advWeb.fin/advWeb.adm*100).toFixed(1):0;
+
+  // Ti embudo
+  const tiAdv=D.ti_embudo['Adventista']||{}, tiPub=D.ti_embudo['Pública']||{};
+  const advConv=tiAdv.adm?(tiAdv.fin/tiAdv.adm*100).toFixed(1):0;
+  const pubConv=tiPub.adm?(tiPub.fin/tiPub.adm*100).toFixed(1):0;
+
+  // Razones
+  const rzC=D.razones_std['Por ser una universidad cristiana']||{};
+  const rzE=D.razones_std['Por la excelencia académica']||{};
+  const rzS=D.razones_std['Por la seguridad y ambiente']||{};
+  const rzCa=D.razones_std['Por cercanía']||{};
+  const rzLibTot=Object.values(D.razones_libre||{}).reduce((s,v)=>s+v.n,0);
+
+  // Med/Pre
+  const preAdm=Object.values(D.med_pre).reduce((s,v)=>s+v.pa,0);
+  const preFin=Object.values(D.med_pre).reduce((s,v)=>s+v.pf,0);
+  const medAdm=Object.values(D.med_pre).reduce((s,v)=>s+v.ma,0);
+  const medFin=Object.values(D.med_pre).reduce((s,v)=>s+v.mf,0);
+  const preConv=Math.round(preFin/preAdm*100);
+
+  // Sexo
+  const totF=D.sexo_f.reduce((s,v)=>s+v,0), totM=D.sexo_m.reduce((s,v)=>s+v,0);
+  const pctF=(totF/(totF+totM)*100).toFixed(1);
+
+  // Patagonia
+  const pat=D.regiones['Patagonia']||{};
+
+  // Brasil / Uruguay
+  const br=D.intl['Brasileña']||{}, uy=D.intl['Uruguaya']||{};
+  const brPico=Math.max(...(br.yr||[]));
+  const uyIniPct=uy.adm?Math.round(uy.ini/uy.adm*100):0;
+  const uyFinPct=uy.adm?Math.round(uy.fin/uy.adm*100):0;
+
+  // ─── Helper: setKPI(selector, kv, ks) ───
+  function sq(sel, val) {
+    document.querySelectorAll(sel).forEach(el => { if(val!==undefined) el.textContent = val; });
+  }
+
+  // ─── RESUMEN ───
+  sq('.kpi-total-adm-kv',  totAdm.toLocaleString('es-AR'));
+  sq('.kpi-total-fin-kv',  totFin.toLocaleString('es-AR'));
+  sq('.kpi-total-fin-ks',  convGlob + '% conversión global');
+
+  // ─── EMBUDO ───
+  sq('.kpi-tasa-e1-kv',    tE1 + '%');
+  sq('.kpi-tasa-e2-kv',    tE2 + '%');
+  sq('.kpi-drop1-ks',      drop1.toLocaleString('es-AR') + ' no inician — pérdida principal');
+  sq('.kpi-drop2-ks',      'Solo ' + drop2.toLocaleString('es-AR') + ' no terminan');
+  sq('.kpi-tot-fin-emb',   totFin.toLocaleString('es-AR') + ' de ' + totAdm.toLocaleString('es-AR'));
+
+  // ─── CARRERAS ───
+  const psi=D.carreras['Psicología']||{};
+  sq('.kpi-psi-ks', psi.adm + ' adm · ' + Math.round(psi.fin/psi.adm*100) + '% conv.');
+  sq('.kpi-pre-fin-ks', preFin + ' finalizaron');
+  sq('.kpi-med-fin-ks', medFin + ' de ' + medAdm);
+  sq('.kpi-pre26-vs-24-ks', D.med_pre[2026].pa + ' vs ' + D.med_pre[2024].pa);
+  sq('.kpi-pre-adm-kv', preAdm);
+
+  // ─── LOCAL ───
+  sq('.kpi-arg-adm-kv',  argAdm.toLocaleString('es-AR'));
+  sq('.kpi-arg-fin-ks',  Math.round(argFin/argAdm*100) + '% conversión');
+  sq('.kpi-arg-fin-kv',  argFin.toLocaleString('es-AR'));
+  sq('.kpi-arg-fin2-ks', argFin.toLocaleString('es-AR') + ' de ' + argAdm.toLocaleString('es-AR'));
+
+  // ─── ENTRE RÍOS ───
+  sq('.kpi-er-crec-kv',  '+' + erCrec + '%');
+  sq('.kpi-er-adm-kv',   erAdm.toLocaleString('es-AR'));
+  sq('.kpi-er-conv-kv',  erConv + '%');
+  sq('.kpi-er-mat-ks',   erFin + ' matriculados');
+  sq('.kpi-er-pico-kv',  erPico);
+
+  // ─── COLEGIOS ───
+  sq('.kpi-top3-adm-kv',  top3Adm);
+  sq('.kpi-top3-pct-ks',  col1.inst?.split('(')[0]?.trim() + ' + ISAM + IAP = ' + top3Pct + '% local');
+  sq('.kpi-col1-kv',      col1.pct + '%');
+  sq('.kpi-col1-ks',      col1.adm + ' adm · ' + col1.fin + ' mat.');
+  sq('.kpi-col3-kv',      col3.adm);
+  sq('.kpi-col3-ks',      col3.pct + '% conversión');
+  sq('.kpi-adv-conv-ks',  'vs ' + pubConv + '% pública');
+  sq('.kpi-col-na1-ks',   col_na1.adm + ' adm · ' + col_na1.pct + '% conv.');
+
+  // ─── INTERNACIONAL ───
+  sq('.kpi-ext-adm-kv',   extAdm.toLocaleString('es-AR'));
+  sq('.kpi-ext-pct-ks',   extPct + '% del total período');
+  sq('.kpi-br-ks',        br.adm + ' adm · ' + Math.round(br.fin/br.adm*100) + '% conv.');
+  sq('.kpi-uy-ks',        uyIniPct + '% inicio · ' + uyFinPct + '% final');
+  sq('.kpi-br-caida-ks',  (br.yr?.[br.yr.length-1]||0) + ' vs ' + brPico);
+
+  // ─── PERFIL ───
+  sq('.kpi-sexo-f-ks',    totF.toLocaleString('es-AR') + ' mujeres');
+  sq('.kpi-pct-f-kv',     pctF + '%');
+
+  // ─── CANALES ───
+  sq('.kpi-fam-adm-ks',   fam.adm + ' adm. locales');
+  sq('.kpi-fam-conv-kv',  Math.round(famConv) + '%');
+  sq('.kpi-web-conv-kv',  Math.round(webConv) + '%');
+  sq('.kpi-adv-web-ks',   'Mayor predisposición, peor journey');
+  sq('.kpi-adv-fam-kv',   advFamConv + '%');
+
+  // ─── RAZONES ───
+  sq('.kpi-rz-c-kv',   rzC.total?.toLocaleString('es-AR'));
+  sq('.kpi-rz-e-kv',   rzE.total?.toLocaleString('es-AR'));
+  sq('.kpi-rz-s-kv',   rzS.total?.toLocaleString('es-AR'));
+  sq('.kpi-rz-ca-kv',  rzCa.total?.toLocaleString('es-AR'));
+  sq('.kpi-rz-lib-kv', rzLibTot);
+  sq('.kpi-rz-c-ks',   (rzC.total?Math.round(rzC.total/totAdm*100):0) + '% del total · ' + (rzC.total?Math.round(rzC.fin/rzC.total*100):0) + '% conv.');
+  sq('.kpi-rz-e-ks',   (rzE.total?Math.round(rzE.total/totAdm*100):0) + '% · ' + (rzE.total?Math.round(rzE.fin/rzE.total*100):0) + '% conv.');
+  sq('.kpi-rz-s-ks',   (rzS.total?Math.round(rzS.total/totAdm*100):0) + '% · ' + (rzS.total?Math.round(rzS.fin/rzS.total*100):0) + '% conv.');
+  sq('.kpi-rz-ca-ks',  (rzCa.total?Math.round(rzCa.total/totAdm*100):0) + '% · ' + (rzCa.total?Math.round(rzCa.fin/rzCa.total*100):0) + '% conv.');
+  sq('.kpi-rz-lib-ks', (Math.round(rzLibTot/totAdm*100)) + '% respondió abiertamente');
+
+})(); // fin autoKPIs
 
 function T(id,el){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
