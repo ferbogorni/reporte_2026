@@ -95,7 +95,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F2F5;color:#1a1a2
     <div class="kpi vd"><div class="kl">Total matriculados</div><div class="kv" kpi-total-fin-kv">3.811</div><div class="ks" kpi-total-fin-ks">84.4% conversión global</div></div>
     <div class="kpi"><div class="kl">Pico admitidos</div><div class="kv">764</div><div class="ks">2022</div></div>
     <div class="kpi na"><div class="kl">Valle reciente</div><div class="kv">494</div><div class="ks">2025 · −35% vs pico</div></div>
-    <div class="kpi vd"><div class="kl">Recuperación 2026</div><div class="kv">−23%</div><div class="ks">574 vs 494</div></div>
+    <div class="kpi vd"><div class="kl">Recuperación 2026</div><div class="kv kpi-recup-kv">+20%</div><div class="ks kpi-recup-ks">591 vs 494 (valle 2025)</div></div>
     <div class="kpi"><div class="kl">Arg / Ext promedio</div><div class="kv">67 / 33</div><div class="ks">% del período</div></div>
   </div>
   <div class="g2">
@@ -1137,6 +1137,14 @@ tp2.innerHTML+='</tbody>';
   }
 
   // ─── RESUMEN ───
+  // Recuperación 2026 vs valle (dinámico)
+  const ANIO_AB  = parseInt(YRS_S[YRS_S.length-1]);
+  const adm_ab   = D.embudo_global[ANIO_AB].adm;
+  const adm_prev = D.embudo_global[ANIO_AB-1].adm;
+  const delta_v  = Math.round((adm_ab - adm_prev)/adm_prev*100);
+  sq('.kpi-recup-kv', (delta_v>0?'+':'')+delta_v+'%');
+  sq('.kpi-recup-ks', adm_ab+' vs '+adm_prev+' (valle '+(ANIO_AB-1)+')');
+
   sq('.kpi-total-adm-kv',  totAdm.toLocaleString('es-AR'));
   sq('.kpi-total-fin-kv',  totFin.toLocaleString('es-AR'));
   sq('.kpi-total-fin-ks',  convGlob + '% conversión global');
